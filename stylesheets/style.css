@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("../views/img1.png") no-repeat center;
+    background-size: cover;
+}
+
+.login {
+    width: 513px;
+    height: 713px;
+    background: white;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.93;
+}
+
+.logo {
+    margin-top: 60px;
+    width: 205px;
+    height: 189px;
+}
+
+.decoration {
+    text-decoration: none;
+}
+
+.login-form {
+    position: relative;
+    z-index: 2;
+}
+
+.int-area {
+    width : 300px;
+}
+
+.int-area input {
+    width: 100%;
+    padding: 10px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px;
+    color: black;
+}
