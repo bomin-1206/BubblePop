@@ -24,7 +24,11 @@ body {
     align-items: center;
     flex-direction: column;
     opacity: 0.93;
+<<<<<<< Updated upstream
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+=======
+    color: #7B7B7B;
+>>>>>>> Stashed changes
 }
 
 .logo {
@@ -44,14 +48,29 @@ body {
 
 .int-area {
     width : 300px;
+    position: relative;
 }
 
 .int-area input {
     width: 100%;
-    padding: 10px 10px 10px;
+    padding: 10px 5px 3px;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #999;
     font-size: 18px;
     color: black;
+    outline: none;
+}
+
+.int-area label {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 18px;
+    color: #7B7B7B;
+}
+
+.int-area input:focus + label,
+.int-area input:valid + label {
+    top: 0;
 }
