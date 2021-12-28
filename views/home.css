@@ -9,5 +9,5 @@
 }
 
 .home_bg{
-  background-image: url(../views/home.png);
+  background-image: url("../views/home.png");
 }
