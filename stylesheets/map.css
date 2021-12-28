@@ -6,14 +6,20 @@
     border-collapse: collapse;
     margin:0px;
     padding:0px;
-    background-image: url("../views/");
-
 }
+
+body{
+    background-image: url("../views/map1.png");
+}
+
+
+
 .map_img{
     border-radius: 30px;
     margin-top:24px;
     margin-left:840px;
 }
+
 
 .wrap {
     position: absolute;
