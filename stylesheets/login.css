@@ -30,7 +30,7 @@ body {
 
 .logo {
     margin-top: 60px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     width: 205px;
     height: 189px;
 }
@@ -47,8 +47,9 @@ body {
 .int-area {
     width : 300px;
     font-size:14px;
-    margin-top: 20px;
+    margin-top: 10px;
     position: relative;
+    margin-bottom: 20px;
 }
 
 .int-area input {
@@ -62,19 +63,13 @@ body {
     outline: none;
 }
 
-
-.btn-area{
-    width:320px;
-    height:44px;
-    font-size:14px;
-    text-align:center;
-    margin-top: 49px;
-    background: #ff94af;
-    border-radius: 40px;
+.a1 {
+    margin-right: 10px;
 }
 
 .caption{
     margin-top: 66px;
+    text-align: center;
 }
 
 .caption>a{
@@ -88,12 +83,29 @@ body {
 .int-area label {
     position: absolute;
     left: 10px;
-    top: 15px;
-    font-size: 18px;
+    font-size: 15px;
     color: #7B7B7B;
 }
 
 .int-area input:focus + label,
 .int-area input:valid + label {
     top: 0;
+    font-size: 15px;
+    color: #ff94af;
+}
+
+.btn-area {
+    margin-top: 30px;
+}
+
+.btn-area button {
+    color: white;
+    width: 280px;
+    height: 40px;
+    background: #FFA0B7;
+    font-size: 18px;
+    margin-top: 13px;
+    border: none;
+    border-radius: 25px;
+    margin-bottom: none;
 }
