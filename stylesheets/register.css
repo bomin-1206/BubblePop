@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url("img1.png") no-repeat center;
+    background: url("../views/img1.png") no-repeat center;
     background-size: cover;
 }
 
