@@ -54,13 +54,13 @@ body {
 
 .int-area input {
     width: 100%;
-    padding: 10px 5px 3px;
-    background-color: transparent;
-    border: none;
+    
+    
+    
     border-bottom: 1px solid #999;
     font-size: 18px;
     color: black;
-    outline: none;
+    
 }
 
 .a1 {
