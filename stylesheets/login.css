@@ -124,3 +124,14 @@ body {
     border-radius: 25px;
     margin-bottom: none;
 }
+
+.open-eye {
+    position: absolute;
+    font-size: 25px;
+    color: gray;
+    margin: 30px 0 0 -28px;;
+}
+
+.close-eye {
+    display: none;
+}

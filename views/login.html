@@ -21,6 +21,8 @@
             </div>
             <div class="int-area">
                 <input type="password" name="pw" id="pw" autocomplete="off" required>
+                <img class="open-eye" src="../views/eye.png"></img>
+                <img class="close-eye" src="../views/eye2.png"></img>
                 <span></span>
                 <label for="pw" class="pw-label">비밀번호</label>
             </div>
@@ -30,12 +32,25 @@
             <div class="caption">
             <a class="a1">아직 회원이 아니신가요?</a>
             <a class="decoration" href="" style="color:#FFA0B7">회원 가입하기</a>
-        </div>
+            </div>
         </form>
         </div>
-        
     </section>
-
     </div>
+    <script>
+        function show() {
+            var password = document.getElementById('pw');
+            var icon = document.querySelector('.fas');
+            if(pw.type === "password") {
+                pw.type = "text";
+                pw.style.marginTop = "20px";
+                icon.style.color = "#7f2092";
+            }
+            else {
+                pw.type = "password";
+                icon.style.color = "grey";
+            }
+        }
+    </script>
 </body>
 </html>
