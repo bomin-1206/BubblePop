@@ -12,12 +12,21 @@ body{
     background-image: url("../views/map1.png");
 }
 
+.box {
+    width: 700px;
+    height: 1000px;
+    background: white;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+}
+
 .map_img{
     border-radius: 30px;
     margin-top:24px;
     margin-left:840px;
 }
-
 
 .wrap {
     position: absolute;
