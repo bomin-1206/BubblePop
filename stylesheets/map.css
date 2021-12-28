@@ -6,7 +6,13 @@
     border-collapse: collapse;
     margin:0px;
     padding:0px;
-    background-image: url("");
+    background-image: url("../views/");
+
+}
+.map_img{
+    border-radius: 30px;
+    margin-top:24px;
+    margin-left:840px;
 }
 
 .wrap {
