@@ -13,7 +13,7 @@ body{
 }
 
 .box {
-    width: 750px;
+    width: 600px;
     height: 900px;
     background: white;
     border-radius: 40px;
@@ -21,9 +21,8 @@ body{
     align-items: center;
     flex-direction: column; 
     margin-top:20px;
-    margin-left:40px;
+    margin-left:65px;
     position: absolute;
-    margin-bottom: 20px;
 }
 
 .search_area{
@@ -45,16 +44,15 @@ body{
 
 .search_area>form>img{
     cursor: pointer;
-    margin-top:6px;
-    width: 20pxpx;
+    width: 20px;
     height: 20px;
-    
+    margin: 0px 10px -4px;
 }
 
 .map_img{
     border-radius: 30px;
     margin-top:24px;
-    margin-left: 43%;
+    margin-left: 36%;
     margin-bottom: 20px;
 }
 
