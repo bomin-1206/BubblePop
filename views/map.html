@@ -14,13 +14,30 @@
 
 <body>
     <div id="map" style="width:100%;height:100vh;"></div>
+    <div class="category">
+        <ul>
+            <li id="coffeeMenu" onclick="changeMarker('coffee')">
+                <span class="ico_comm ico_coffee"></span>
+                CAFE
+            </li>
+            <li id="storeMenu" onclick="changeMarker('store')">
+                <span class="ico_comm ico_store"></span>
+                FOOD
+            </li>
+            <li id="carparkMenu" onclick="changeMarker('carpark')">
+                <span class="ico_comm ico_carpark"></span>
+                PLACE
+            </li>
+        </ul>
+    </div>
+    </div>
 
 
-    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=c4aff8bec893e3039f315686989b5a65"></script>
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ae5e241bc9f725d7809418c2b21f0a62"></script>
     <script>
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
             mapOption = {
-                center: new kakao.maps.LatLng(35.663345, 128.414105), // 지도의 중심좌표
+                center: new kakao.maps.LatLng(35.66325395378856, 128.4136840979611), // 지도의 중심좌표
                 level: 3 // 지도의 확대 레벨
             };
 
@@ -28,17 +45,88 @@
 
         // 마커를 표시할 위치와 title 객체 배열입니다 
         var positions = [
-            {
+        {
+                //카페
                 title: '구지 커피명가',
                 latlng: new kakao.maps.LatLng(35.640390387840746, 128.40354915598132)
             },
             {
-                title: '중앙 공원',
-                latlng: new kakao.maps.LatLng(35.690413256113374, 128.46037706059198)
+                title: '니우나이',
+                latlng: new kakao.maps.LatLng(35.66108633334286, 128.41536076103677)
+            },
+            {
+                title: '이디야커피',
+                latlng: new kakao.maps.LatLng(35.65594828647931, 128.41904323079987)
+            },
+            {
+                title: '별의별',
+                latlng: new kakao.maps.LatLng(35.66586434869009, 128.4106894001103)
+            },
+            {
+                title: '기브온',
+                latlng: new kakao.maps.LatLng(35.70421378042498, 128.36766913873117)
+            },
+            {
+                title: '커피팀버',
+                latlng: new kakao.maps.LatLng(35.694065442653404, 128.4725250718114)
+            },
+            {
+                title: '스타벅스',
+                latlng: new kakao.maps.LatLng(35.6939957357487, 128.45896382286125)
+            },
+            {
+                title: '커피로드',
+                latlng: new kakao.maps.LatLng(35.70173283020532, 128.4709372040546)
+            },
+            {
+                title: '파스쿠찌',
+                latlng: new kakao.maps.LatLng(35.692463674743564, 128.45048506455862)
+            },
+            {
+                title: '공차',
+                latlng: new kakao.maps.LatLng(35.678082150742945, 128.45555984614464)
+            },
+            {
+                //레스토랑
+                title: '뜨거운 돈까스',
+                latlng: new kakao.maps.LatLng(35.69348693539046, 128.45998849830983)
             },
             {
                 title: '뜨돈',
                 latlng: new kakao.maps.LatLng(35.69348693539046, 128.45998849830983)
+            },
+            {
+                title: '뜨돈',
+                latlng: new kakao.maps.LatLng(35.69348693539046, 128.45998849830983)
+            },
+            {
+                title: '뜨돈',
+                latlng: new kakao.maps.LatLng(35.69348693539046, 128.45998849830983)
+            },
+            {
+                title: '뜨돈',
+                latlng: new kakao.maps.LatLng(35.69348693539046, 128.45998849830983)
+            },
+            {
+                //플레이스
+                title: '중앙 공원',
+                latlng: new kakao.maps.LatLng(35.690413256113374, 128.46037706059198)
+            },
+            {
+                title: '롯데시네마',
+                latlng: new kakao.maps.LatLng(35.693421622079, 128.45630309831012)
+            },
+            {
+                title: '롯데시네마',
+                latlng: new kakao.maps.LatLng(35.693421622079, 128.45630309831012)
+            },
+            {
+                title: '롯데시네마',
+                latlng: new kakao.maps.LatLng(35.693421622079, 128.45630309831012)
+            },
+            {
+                title: '롯데시네마',
+                latlng: new kakao.maps.LatLng(35.693421622079, 128.45630309831012)
             },
             {
                 title: '롯데시네마',
@@ -73,23 +161,7 @@
         });
 
         // 커스텀 오버레이에 표시할 컨텐츠 입니다
-        var content = '<div class="wrap">' +
-            '    <div class="info">' +
-            '        <div class="title">' +
-            '            대구소프트웨어마이스터고' +
-            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' +
-            '        </div>' +
-            '        <div class="body">' +
-            '            <div class="img">' +
-            '                <img src="https://w.namu.la/s/0cd5ae0bb1295d00e250281621a764bf920494324b5476f8cb74164630beefbbd4daf8e2bdf445d29df52e9d83a21b06bddb668bb451d6ca17628d4cb590ca36f0e364dee45fdbdb09cbafc81145bdc315b42ea53a74dd9eff9db71b281f19cf99b3e8d0b9d23006b112211dc105a155" width="73" height="70">' +
-            '           </div>' +
-            '            <div class="desc">' +
-            '                <div class="ellipsis">대구광역시 구지면 창리로 11길</div>' +
-            '                <div class="jibun ellipsis">(우) 43010 (지번) 창리 324</div>' +
-            '                <div><a href="http://www.dgsw.hs.kr/index.do" target="_blank" class="link">홈페이지</a></div>' +
-            '            </div>' +
-            '        </div>' +
-            '    </div>' +
+        var content = '<div class="wrap">' + "대구소프트웨어고등학교" +
             '</div>';
 
         // 마커 위에 커스텀오버레이를 표시
@@ -112,6 +184,198 @@
         // 지도 확대 축소제어
         var zoomControl = new kakao.maps.ZoomControl();
         map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+        // 커피숍 마커가 표시될 좌표 배열입니다
+        var coffeePositions = [
+            new kakao.maps.LatLng(35.640390387840746, 128.40354915598132),//구지 커피명가
+            new kakao.maps.LatLng(35.66108633334286, 128.41536076103677),//니우나이,
+            new kakao.maps.LatLng(35.65594828647931, 128.41904323079987),//이디야커피
+            new kakao.maps.LatLng(35.66586434869009, 128.4106894001103),//별의별
+            new kakao.maps.LatLng(35.70421378042498, 128.36766913873117),//기브온
+            new kakao.maps.LatLng(35.694065442653404, 128.4725250718114),//커피팀버
+            new kakao.maps.LatLng(35.6939957357487, 128.45896382286125),//스타벅스
+            new kakao.maps.LatLng(35.678082150742945, 128.45555984614464),//공차
+            new kakao.maps.LatLng(35.70173283020532, 128.4709372040546),//커피로드
+            new kakao.maps.LatLng(35.692463674743564, 128.45048506455862)//파스쿠찌
+        ];
+
+        // 레스토랑 마커가 표시될 좌표 배열입니다
+        var storePositions = [
+            new kakao.maps.LatLng(37.497535461505684, 127.02948149502778),
+            new kakao.maps.LatLng(37.49671536281186, 127.03020491448352),
+            new kakao.maps.LatLng(37.496201943633714, 127.02959405469642),
+            new kakao.maps.LatLng(37.49640072567703, 127.02726459882308),
+            new kakao.maps.LatLng(37.49640098874988, 127.02609983175294),
+            new kakao.maps.LatLng(37.49932849491523, 127.02935780247945),
+            new kakao.maps.LatLng(37.49996818951873, 127.02943721562295)
+        ];
+
+        // 플레이스 마커가 표시될 좌표 배열입니다
+        var carparkPositions = [
+            new kakao.maps.LatLng(37.49966168796031, 127.03007039430118),
+            new kakao.maps.LatLng(37.499463762912974, 127.0288828824399),
+            new kakao.maps.LatLng(37.49896834100913, 127.02833986892401),
+            new kakao.maps.LatLng(37.49893267508434, 127.02673400572665),
+            new kakao.maps.LatLng(37.49872543597439, 127.02676785815386),
+            new kakao.maps.LatLng(37.49813096097184, 127.02591949495914),
+            new kakao.maps.LatLng(37.497680616783086, 127.02518427952202)
+        ];
+
+        var markerImageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png';  // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
+        coffeeMarkers = [], // 커피숍 마커 객체를 가지고 있을 배열입니다
+            storeMarkers = [], // 편의점 마커 객체를 가지고 있을 배열입니다
+            carparkMarkers = []; // 주차장 마커 객체를 가지고 있을 배열입니다
+
+
+        createCoffeeMarkers(); // 커피숍 마커를 생성하고 커피숍 마커 배열에 추가합니다
+        createStoreMarkers(); // 편의점 마커를 생성하고 편의점 마커 배열에 추가합니다
+        createCarparkMarkers(); // 주차장 마커를 생성하고 주차장 마커 배열에 추가합니다
+
+        changeMarker('coffee'); // 지도에 커피숍 마커가 보이도록 설정합니다    
+
+
+        // 마커이미지의 주소와, 크기, 옵션으로 마커 이미지를 생성하여 리턴하는 함수입니다
+        function createMarkerImage(src, size, options) {
+            var markerImage = new kakao.maps.MarkerImage(src, size, options);
+            return markerImage;
+        }
+
+        // 좌표와 마커이미지를 받아 마커를 생성하여 리턴하는 함수입니다
+        function createMarker(position, image) {
+            var marker = new kakao.maps.Marker({
+                position: position,
+                image: image
+            });
+
+            return marker;
+        }
+
+        // 커피숍 마커를 생성하고 커피숍 마커 배열에 추가하는 함수입니다
+        function createCoffeeMarkers() {
+
+            for (var i = 0; i < coffeePositions.length; i++) {
+
+                var imageSize = new kakao.maps.Size(22, 26),
+                    imageOptions = {
+                        spriteOrigin: new kakao.maps.Point(10, 0),
+                        spriteSize: new kakao.maps.Size(36, 98)
+                    };
+
+                // 마커이미지와 마커를 생성합니다
+                var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
+                    marker = createMarker(coffeePositions[i], markerImage);
+
+                // 생성된 마커를 커피숍 마커 배열에 추가합니다
+                coffeeMarkers.push(marker);
+            }
+        }
+
+        // 커피숍 마커들의 지도 표시 여부를 설정하는 함수입니다
+        function setCoffeeMarkers(map) {
+            for (var i = 0; i < coffeeMarkers.length; i++) {
+                coffeeMarkers[i].setMap(map);
+            }
+        }
+
+        // 편의점 마커를 생성하고 편의점 마커 배열에 추가하는 함수입니다
+        function createStoreMarkers() {
+            for (var i = 0; i < storePositions.length; i++) {
+
+                var imageSize = new kakao.maps.Size(22, 26),
+                    imageOptions = {
+                        spriteOrigin: new kakao.maps.Point(10, 36),
+                        spriteSize: new kakao.maps.Size(36, 98)
+                    };
+
+                // 마커이미지와 마커를 생성합니다
+                var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
+                    marker = createMarker(storePositions[i], markerImage);
+
+                // 생성된 마커를 편의점 마커 배열에 추가합니다
+                storeMarkers.push(marker);
+            }
+        }
+
+        // 편의점 마커들의 지도 표시 여부를 설정하는 함수입니다
+        function setStoreMarkers(map) {
+            for (var i = 0; i < storeMarkers.length; i++) {
+                storeMarkers[i].setMap(map);
+            }
+        }
+
+        // 주차장 마커를 생성하고 주차장 마커 배열에 추가하는 함수입니다
+        function createCarparkMarkers() {
+            for (var i = 0; i < carparkPositions.length; i++) {
+
+                var imageSize = new kakao.maps.Size(22, 26),
+                    imageOptions = {
+                        spriteOrigin: new kakao.maps.Point(10, 72),
+                        spriteSize: new kakao.maps.Size(36, 98)
+                    };
+
+                // 마커이미지와 마커를 생성합니다
+                var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
+                    marker = createMarker(carparkPositions[i], markerImage);
+
+                // 생성된 마커를 주차장 마커 배열에 추가합니다
+                carparkMarkers.push(marker);
+            }
+        }
+
+        // 주차장 마커들의 지도 표시 여부를 설정하는 함수입니다
+        function setCarparkMarkers(map) {
+            for (var i = 0; i < carparkMarkers.length; i++) {
+                carparkMarkers[i].setMap(map);
+            }
+        }
+
+        // 카테고리를 클릭했을 때 type에 따라 카테고리의 스타일과 지도에 표시되는 마커를 변경합니다
+        function changeMarker(type) {
+
+            var coffeeMenu = document.getElementById('coffeeMenu');
+            var storeMenu = document.getElementById('storeMenu');
+            var carparkMenu = document.getElementById('carparkMenu');
+
+            // 커피숍 카테고리가 클릭됐을 때
+            if (type === 'coffee') {
+
+                // 커피숍 카테고리를 선택된 스타일로 변경하고
+                coffeeMenu.className = 'menu_selected';
+
+                // 편의점과 주차장 카테고리는 선택되지 않은 스타일로 바꿉니다
+                storeMenu.className = '';
+                carparkMenu.className = '';
+
+                // 커피숍 마커들만 지도에 표시하도록 설정합니다
+                setCoffeeMarkers(map);
+                setStoreMarkers(null);
+                setCarparkMarkers(null);
+
+            } else if (type === 'store') { // 편의점 카테고리가 클릭됐을 때
+
+                // 편의점 카테고리를 선택된 스타일로 변경하고
+                coffeeMenu.className = '';
+                storeMenu.className = 'menu_selected';
+                carparkMenu.className = '';
+
+                // 편의점 마커들만 지도에 표시하도록 설정합니다
+                setCoffeeMarkers(null);
+                setStoreMarkers(map);
+                setCarparkMarkers(null);
+
+            } else if (type === 'carpark') { // 주차장 카테고리가 클릭됐을 때
+
+                // 주차장 카테고리를 선택된 스타일로 변경하고
+                coffeeMenu.className = '';
+                storeMenu.className = '';
+                carparkMenu.className = 'menu_selected';
+
+                // 주차장 마커들만 지도에 표시하도록 설정합니다
+                setCoffeeMarkers(null);
+                setStoreMarkers(null);
+                setCarparkMarkers(map);
+            }
+        } 
     </script>
 </body>
 
