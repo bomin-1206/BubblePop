@@ -67,6 +67,35 @@ body {
     outline: none;
 }
 
+.register-int label {
+    position: absolute;
+    left: 10px;
+    font-size: 15px;
+    color: #7B7B7B;
+}
+
+.register-int span::before {
+    content: '';
+    position: absolute;
+    top: 49px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background:#ff94af;
+}
+
+.register-int input:focus ~ label,
+.register-int input:valid ~ label {
+    top: 0;
+    font-size: 15px;
+    color: #ff94af;
+}
+
+.register-int input:focus ~ span::before,
+.register-int input:valid ~ span::before {
+    width: 100%;
+}
+
 .register-btn button{ /* 회원가입 버튼 */
     color: white;
     width:280px;
@@ -89,7 +118,3 @@ body {
     font-size: 15px;
     color: #7B7B7B;
 }
-
-
-
-
