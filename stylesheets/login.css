@@ -87,11 +87,26 @@ body {
     color: #7B7B7B;
 }
 
-.int-area input:focus + label,
-.int-area input:valid + label {
+.int-area span::before {
+    content: '';
+    position: absolute;
+    top: 49px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background:#ff94af;
+}
+
+.int-area input:focus ~ label,
+.int-area input:valid ~ label {
     top: 0;
     font-size: 15px;
     color: #ff94af;
+}
+
+.int-area input:focus ~ span::before,
+.int-area input:valid ~ span::before {
+    width: 100%;
 }
 
 .btn-area {
