@@ -44,7 +44,10 @@ body {
     text-decoration: underline;
 }
 
-
+.register-form {
+    position: relative;
+    z-index: 2;
+}
 
 .register-int {
     width : 300px;
