@@ -5,7 +5,6 @@
     border-collapse: collapse;
     margin:0px;
     padding:0px;
-<<<<<<< Updated upstream
 }
 
 body{
@@ -131,13 +130,10 @@ input:focus {
     margin-top:24px;
     margin-left: 38%;
     margin-bottom: 20px;
-=======
->>>>>>> Stashed changes
 }
-
 .map_img{
     display:flex;
-    margin-left: 850px;
+    margin-left: 730px;
     margin-top:12px;
     border-radius: 40px;
 }
