@@ -14,7 +14,6 @@
 
 <body>
 
-    
     <div class="box">
        
         <div class="search_area">
@@ -27,29 +26,47 @@
             <h1>추천 코스</h1>
         </div>
         <div class="image_map">
-            <img src="../public/photo/map2.png">
+            <div class="contents">
+                <li>
+                    <div class="image_map2">
+                        <img src="../public/photo/icon1.png">
+                    </div>
+                    <div class="image_text">추천 된 카페</div>
+                </li>
+    
+                <li>
+                    <div class="image_map2">
+                        <img src="../public/photo/icon2.png">
+                    </div>
+                    <div class="image_text_2">추천 된 식당</div>
+                </li>
+    
+                <li>
+                    <div class="image_map2">
+                        <img src="../public/photo/icon3.png">
+                    </div>
+                    <div class="image_text">추천 된 플레이스</div>
+                </li>
+            </div>
         </div>
-        <div class="contents">
-            <li>
-                <div class="image_map2">
-                    <img src="../public/photo/icon1.png">
-                </div>
-                <div class="image_text">추천 된 카페</div>
-            </li>
 
-            <li>
-                <div class="image_map2">
-                    <img src="../public/photo/icon2.png">
-                </div>
-                <div class="image_text_2">추천 된 식당</div>
-            </li>
+        <div class=menu-btn>
+            <button type="submit" id="all">ALL</button>
+            <button type="submit" id="cafe">CAFE</button>
+            <button type="submit" id="rest">RESTAURANT</button>
+            <button type="submit" id="palce">PLACE</button>
+        </div>
 
-            <li>
-                <div class="image_map2">
-                    <img src="../public/photo/icon3.png">
-                </div>
-                <div class="image_text">추천 된 플레이스</div>
-            </li>
+        <div class="scrollWrap">
+                <div class="scrollWrapBox"></div> 
+                <div class="scrollWrapBox"></div>
+                <div class="scrollWrapBox"></div>
+                <div class="scrollWrapBox"></div>
+                <div class="scrollWrapBox"></div>
+                <div class="scrollWrapBox"></div>
+                <div class="scrollWrapBox"></div>
+                <div class="scrollWrapBox"></div>
+
         </div>
     </div>
 
@@ -156,8 +173,8 @@
                 latlng: new kakao.maps.LatLng(35.65566284382456, 128.41923313906088)
             },
             {
-                title: '두찜',
-                latlng: new kakao.maps.LatLng(35.65540385421059, 128.4203261199095)
+                title: '60계치킨',
+                latlng: new kakao.maps.LatLng(35.6562808681929, 128.4188876457227)
             },
             {
                 title: '60계치킨',
@@ -437,6 +454,8 @@
                 setCarparkMarkers(map);
             }
         } 
+
+        
         
         </script>
 </body>
