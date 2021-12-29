@@ -22,12 +22,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get("/", function(req, res){
-    res.sendFile(__dirname+"/views/login.html")
-})
+    res.sendFile(__dirname+"/public/views/login.html");
+});
+app.get("/register.html", function (req, res) {
+    res.sendFile(__dirname + "/public/views/register.html");
+});
+app.get("/login.html", function (req, res) {
+    res.sendFile(__dirname + "/public/views/login.html");
+});
 
 app.use('/main', mainRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/logout',logoutRouter);
-  
 module.exports = app;
