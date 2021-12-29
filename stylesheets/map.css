@@ -1,5 +1,5 @@
 *{
-    font-family: 'Nanum Gothic', sans-serif;
+    
     color:#000;
     text-decoration: none;
     border-collapse: collapse;
@@ -11,16 +11,7 @@ body{
     background-image: url("../public/photo/map3.png");
 }
 
-button {
-    color: #000;
-    width: 200px;
-    height: 40px;
-    font-size: 16px;
-    margin-top: 13px;
-    border: none;
-    border-radius: 25px;
-    margin-bottom: none;
-} 
+
 
 .contents{
     display: flex;
@@ -36,10 +27,12 @@ button {
     text-align:center;
     background:#fff;
     border-radius: 100px;
-    margin-top: -250px;
-    opacity:0.9;
+    margin-top: -260px;
+    background-color:rgba(255, 255, 255, 0.93);
+    list-style:none;
+    
 }
-
+    
 
 
 .image_map>img{
@@ -50,7 +43,7 @@ button {
 .image_map2{
     width: 100px;
     margin:auto;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .contents>li>.image_map2>img{
@@ -63,7 +56,6 @@ button {
 .image_text{
     color:#7B7B7B;
     font-size: 14px;
-    font-family: border;
     margin-top: 10px;
 }
 
@@ -80,8 +72,8 @@ button {
 }
 
 .box {
-    width: 670px;
-    height: 880px;
+    width: 665px;
+    height: 890px;
     background: white;
     border-radius: 40px;
     display: flex;
@@ -92,6 +84,9 @@ button {
     margin-top:50px;
     
 }
+
+
+
 
 .search_area{
     width: 500px;
@@ -334,7 +329,7 @@ input:focus {
     .category {
         position: absolute;
         overflow: hidden;
-        top: 38px;
+        top: 30px;
         left: 39%;
         width: 150px;
         height: 50px;
