@@ -73,7 +73,6 @@ app.post('/login', function(req, res){
             var user = results[0];
             if(user.password==pw){
                 res.redirect('/home.html');
-                return;
             }
             else{
                 console.log("아이디 또는 비밀번호가 잘못 입력되었습니다.")
