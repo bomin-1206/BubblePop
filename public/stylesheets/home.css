@@ -7,6 +7,11 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+.user-profile {
+  position: absolute;
+  top: 56px;
+  right: 94px;
+}
 body {
   display: flex;
   align-items: center;
@@ -16,13 +21,13 @@ body {
 }
 
 .group {
-  margin: 10px auto;
+  /* margin-top: 250px; */
   display: flex;
- 
+  float: right;
 }
 
 .cafe {
-  margin-left: 580px;
+  margin-left: 0px;
   display: flex;
   background: white;
   width: 375px;
@@ -91,4 +96,26 @@ body {
   margin-top: 10px;
   font-weight: bold;
   text-align: center;
+}
+
+.home-btn {
+  color: white;
+  width: 320px;
+  height: 83px;
+  background: -moz-linear-gradient(top,  rgba(255,176,196,1) 0%, rgba(250,126,157,0) 100%);
+  background: -webkit-linear-gradient(top,  rgba(255,176,196,1) 0%,rgba(250,126,157,0) 100%);
+  background: linear-gradient(to bottom,  rgba(255,176,196,1) 0%,rgba(250,126,157,0) 100%);
+  font-size: 16px;
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-top: 420px;
+  margin-bottom: auto;
+}
+
+.profile {
+  width: 35px;
+  height: 35px;
 }
