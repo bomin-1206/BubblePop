@@ -35,21 +35,21 @@
                     <div class="image_map2">
                         <img src="../photo/icon1.png">
                     </div>
-                    <div class="image_text">추천 된 카페</div>
+                    <div class="image_text">팔공티<br>대구구지점</div>
                 </li>
 
                 <li>
-                    <div class="image_map2">
+                    <div class="image_map2_2">
                         <img src="../photo/icon2.png">
                     </div>
-                    <div class="image_text_2">추천 된 식당</div>
+                    <div class="image_text_2">성서한옥집김치찜<br>구지점</div>
                 </li>
 
                 <li>
                     <div class="image_map2">
                         <img src="../photo/icon3.png">
                     </div>
-                    <div class="image_text">추천 된 플레이스</div>
+                    <div class="image_text">현풍구지<br>대니산활공장</div>
                 </li>
             </div>
         </div>
@@ -59,9 +59,13 @@
             <button type="submit" id="cafe">CAFE</button>
             <button type="submit" id="rest">RESTAURANT</button>
             <button type="submit" id="palce">PLACE</button>
+            <button onclick="onClick()">asd</button>
         </div>
 
         <div class="scrollWrap">
+            <div class="scrollWrapBox"></div>
+            <div class="scrollWrapBox"></div>
+            <div class="scrollWrapBox"></div>
             <div class="scrollWrapBox"></div>
             <div class="scrollWrapBox"></div>
             <div class="scrollWrapBox"></div>
@@ -86,6 +90,7 @@
                 <span class="ico_comm ico_carpark"></span>
                 PLACE
             </li>
+          
         </ul>
     </div>
     </div>
@@ -109,16 +114,8 @@
                 latlng: new kakao.maps.LatLng(35.640390387840746, 128.40354915598132)
             },
             {
-                title: '니우나이',
-                latlng: new kakao.maps.LatLng(35.66108633334286, 128.41536076103677)
-            },
-            {
                 title: '이디야커피',
                 latlng: new kakao.maps.LatLng(35.65594828647931, 128.41904323079987)
-            },
-            {
-                title: '별의별',
-                latlng: new kakao.maps.LatLng(35.66586434869009, 128.4106894001103)
             },
             {
                 title: '기브온',
@@ -492,24 +489,32 @@
             },
         ];
 
-        // 마커 이미지의 이미지 주소입니다
+        // 마커 이미지의 이미지 주소입니다 ../photo/con1.png
         var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 
         for (var i = 0; i < positions.length; i++) {
 
             // 마커 이미지의 이미지 크기 입니다
-            var imageSize = new kakao.maps.Size(24, 35);
+            // var imageSize = new kakao.maps.Size(20, 30);
 
             // 마커 이미지를 생성합니다    
-            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+            // var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 
-            // 마커를 생성합니다
-            var marker = new kakao.maps.Marker({
-                map: map, // 마커를 표시할 지도
-                position: positions[i].latlng, // 마커를 표시할 위치
-                title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-                image: markerImage // 마커 이미지 
+            const markerPosition = new kakao.maps.LatLng(positions[i].latlng.Ma, positions[i].latlng.La);
+
+            // const marker = new kakao.maps.Marker({
+            //     position: markerPosition,
+            //     image: markerImage
+            // });
+
+            const content = `<div class="background"><img class="markerImg" src="../photo/con2.png" /><span class="markerContent">${positions[i].title}</span></div>`;
+
+            const customOverlay = new kakao.maps.CustomOverlay({
+                position: markerPosition,
+                content
             });
+
+            customOverlay.setMap(map);
         }
 
         // 지도에 마커를 표시합니다 
@@ -646,13 +651,13 @@
 
         var markerImageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png';  // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
         coffeeMarkers = [], // 커피숍 마커 객체를 가지고 있을 배열입니다
-            storeMarkers = [], // 편의점 마커 객체를 가지고 있을 배열입니다
-            carparkMarkers = []; // 주차장 마커 객체를 가지고 있을 배열입니다
+            storeMarkers = [], // 식당 마커 객체를 가지고 있을 배열입니다
+            carparkMarkers = []; // 플레이스 마커 객체를 가지고 있을 배열입니다
 
 
         createCoffeeMarkers(); // 커피숍 마커를 생성하고 커피숍 마커 배열에 추가합니다
-        createStoreMarkers(); // 편의점 마커를 생성하고 편의점 마커 배열에 추가합니다
-        createCarparkMarkers(); // 주차장 마커를 생성하고 주차장 마커 배열에 추가합니다
+        createStoreMarkers(); // 식당 마커를 생성하고 편의점 마커 배열에 추가합니다
+        createCarparkMarkers(); // 플레이스 마커를 생성하고 주차장 마커 배열에 추가합니다
 
         changeMarker('coffee'); // 지도에 커피숍 마커가 보이도록 설정합니다    
 
@@ -700,7 +705,7 @@
             }
         }
 
-        // 편의점 마커를 생성하고 편의점 마커 배열에 추가하는 함수입니다
+        // 식당 마커를 생성하고 편의점 마커 배열에 추가하는 함수입니다
         function createStoreMarkers() {
             for (var i = 0; i < storePositions.length; i++) {
 
@@ -719,14 +724,14 @@
             }
         }
 
-        // 편의점 마커들의 지도 표시 여부를 설정하는 함수입니다
+        // 식당 마커들의 지도 표시 여부를 설정하는 함수입니다
         function setStoreMarkers(map) {
             for (var i = 0; i < storeMarkers.length; i++) {
                 storeMarkers[i].setMap(map);
             }
         }
 
-        // 주차장 마커를 생성하고 주차장 마커 배열에 추가하는 함수입니다
+        // 플레이스 마커를 생성하고 주차장 마커 배열에 추가하는 함수입니다
         function createCarparkMarkers() {
             for (var i = 0; i < carparkPositions.length; i++) {
 
@@ -740,12 +745,12 @@
                 var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
                     marker = createMarker(carparkPositions[i], markerImage);
 
-                // 생성된 마커를 주차장 마커 배열에 추가합니다
+                // 생성된 마커를 플레이스 마커 배열에 추가합니다
                 carparkMarkers.push(marker);
             }
         }
 
-        // 주차장 마커들의 지도 표시 여부를 설정하는 함수입니다
+        // 플레이스 마커들의 지도 표시 여부를 설정하는 함수입니다
         function setCarparkMarkers(map) {
             for (var i = 0; i < carparkMarkers.length; i++) {
                 carparkMarkers[i].setMap(map);
@@ -765,7 +770,7 @@
                 // 커피숍 카테고리를 선택된 스타일로 변경하고
                 coffeeMenu.className = 'menu_selected';
 
-                // 편의점과 주차장 카테고리는 선택되지 않은 스타일로 바꿉니다
+                // 식당과 플레이스 카테고리는 선택되지 않은 스타일로 바꿉니다
                 storeMenu.className = '';
                 carparkMenu.className = '';
 
@@ -774,26 +779,26 @@
                 setStoreMarkers(null);
                 setCarparkMarkers(null);
 
-            } else if (type === 'store') { // 편의점 카테고리가 클릭됐을 때
+            } else if (type === 'store') { // 식당 카테고리가 클릭됐을 때
 
-                // 편의점 카테고리를 선택된 스타일로 변경하고
+                // 식당 카테고리를 선택된 스타일로 변경하고
                 coffeeMenu.className = '';
                 storeMenu.className = 'menu_selected';
                 carparkMenu.className = '';
 
-                // 편의점 마커들만 지도에 표시하도록 설정합니다
+                // 식당 마커들만 지도에 표시하도록 설정합니다
                 setCoffeeMarkers(null);
                 setStoreMarkers(map);
                 setCarparkMarkers(null);
 
-            } else if (type === 'carpark') { // 주차장 카테고리가 클릭됐을 때
+            } else if (type === 'carpark') { // 플레이스 카테고리가 클릭됐을 때
 
-                // 주차장 카테고리를 선택된 스타일로 변경하고
+                // 플레이스 카테고리를 선택된 스타일로 변경하고
                 coffeeMenu.className = '';
                 storeMenu.className = '';
                 carparkMenu.className = 'menu_selected';
 
-                // 주차장 마커들만 지도에 표시하도록 설정합니다
+                // 플레이스 마커들만 지도에 표시하도록 설정합니다
                 setCoffeeMarkers(null);
                 setStoreMarkers(null);
                 setCarparkMarkers(map);
@@ -802,6 +807,110 @@
 
 
 
+    </script>
+    <script>
+        const data = [
+            {
+                'title': '홍유',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'cafe',
+            },{
+                'title': '홍유',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'cafe',
+            },{
+                'title': '홍유',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'cafe',
+            },{
+                'title': '홍유',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'cafe',
+            },{
+                'title': '홍유2',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'place',
+            },
+            {
+                'title': '홍유2',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'place',
+            },{
+                'title': '홍유2',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'place',
+            },{
+                'title': '홍유2',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'place',
+            },{
+                'title': '홍유2',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'place',
+            },{
+                'title': '홍유3',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'restaurant',
+            },
+            {
+                'title': '홍유3',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'restaurant',
+            },
+            {
+                'title': '홍유3',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'restaurant',
+            },
+            {
+                'title': '홍유3',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'restaurant',
+            },
+            {
+                'title': '홍유3',
+                'rating': 5,
+                'adress': '대구 달성군 구지면 과학마을로1길 2',
+                'adress2': '구지면 응암리 1193',
+                'type': 'restaurant',
+            },
+        ]
+        
+        function onClick() {
+            const res = data.filter(({ type }) => type === 'cafe');
+            console.log(res);
+        }
+        `<h1>${data[0].type}</h1>`
+
+        `<div>
+            <h1 class="title">${title}</h1>
+        </div>`
     </script>
 </body>
 

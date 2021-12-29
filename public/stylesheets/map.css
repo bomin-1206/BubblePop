@@ -11,6 +11,31 @@ body {
     background-image: url("../photo/map3.png");
 }
 
+.background {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 0.3rem 0.5rem;
+    border-radius: 20px;
+    user-select: none;
+    border: 1px solid #FFA0B7;
+}
+
+.markerImg {
+    width: 28px;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+.markerContent {
+    font-size: 14px;
+    font-weight: 500;
+}
+
 
 .contents {
     display: flex;
@@ -46,6 +71,13 @@ body {
     width: 100px;
     margin: auto;
     margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.image_map2_2 {
+    width: 100px;
+    margin: auto;
+    margin-top: 55px;
 }
 
 .contents>li>.image_map2>img {
@@ -54,15 +86,15 @@ body {
 
 .image_text {
     color: #7B7B7B;
-    font-size: 14px;
-    margin-top: 10px;
-    font-weight: bolder;
+    font-size: 15px;
+    margin-top: 3px;
+    font-weight: bold;
 }
 
 .image_text_2 {
     color: #7B7B7B;
-    font-size: 14px;
-    margin-top: 22px;
+    font-size: 15px;
+    margin-top: 10px;
     font-weight: bolder;
 }
 
@@ -332,8 +364,8 @@ input:focus {
 .category {
     position: absolute;
     overflow: hidden;
-    top: 70px;
-    left: 39%;
+    top: 75px;
+    left: 40%;
     width: 150px;
     height: 50px;
     z-index: 10;
@@ -409,7 +441,7 @@ input:focus {
 .scrollWrapBox {
     max-width: 98%;
     min-height: 140px;
-    border: 1px solid black
+    border: 1px solid black;
 }
 
 
