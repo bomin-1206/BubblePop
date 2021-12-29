@@ -16,13 +16,35 @@ body {
   background-size: cover;
 }
 
-.box {
-  width: 50%;
-  height: 50%;
+.parent{
+  display: flex 1;
+  margin: auto;
+}
+
+.first {
+  border: none;
   background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: absolute;
+  float: left;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+}
+
+.second{
+  border: none;
+  background: white;
+  float: left;
+  margin-left: 5%;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+}
+
+.third{
+  border: none;
+  background: white;
+  float: right;
+  width:200px;
+  height: 200px;
+  box-sizing: border-box;
 }
