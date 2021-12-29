@@ -9,7 +9,6 @@
 
 body {
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 100vh;
   background: url("../photo/home.png") no-repeat center;
@@ -17,16 +16,19 @@ body {
 }
 
 .parent{
-  display: flex 1;
+  width: 110%;
   margin: auto;
+  margin-left: 20px;
 }
 
 .first {
+  margin-left: 600px;
   border: none;
   background: white;
   float: left;
-  width: 200px;
-  height: 200px;
+  width: 330px;
+  height: 500px;
+  border-radius: 190px;
   box-sizing: border-box;
 }
 
@@ -35,8 +37,9 @@ body {
   background: white;
   float: left;
   margin-left: 5%;
-  width: 200px;
-  height: 200px;
+  width: 330px;
+  height: 500px;
+  border-radius: 190px;
   box-sizing: border-box;
 }
 
@@ -44,7 +47,8 @@ body {
   border: none;
   background: white;
   float: right;
-  width:200px;
-  height: 200px;
+  width: 330px;
+  height: 500px;
+  border-radius: 190px;
   box-sizing: border-box;
 }
