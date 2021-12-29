@@ -11,9 +11,20 @@ body{
     background-image: url("../public/photo/map3.png");
 }
 
+button {
+    color: #000;
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    margin-top: 13px;
+    border: none;
+    border-radius: 25px;
+    margin-bottom: none;
+} 
+
 .contents{
     display: flex;
-    width:70%;
+    width:75%;
     height: 50%;
     
 }
@@ -26,6 +37,7 @@ body{
     background:#fff;
     border-radius: 100px;
     margin-top: -250px;
+    opacity:0.9;
 }
 
 
@@ -38,6 +50,7 @@ body{
 .image_map2{
     width: 100px;
     margin:auto;
+    margin-top: 20px;
 }
 
 .contents>li>.image_map2>img{
@@ -47,10 +60,11 @@ body{
     
 }
 
-.contents>li>.image_text{
+.image_text{
     color:#7B7B7B;
-    font-size: 15px;
-    font-style: bold;
+    font-size: 14px;
+    font-family: border;
+    margin-top: 10px;
 }
 
 .contents>li:not(:last-child){
@@ -75,7 +89,8 @@ body{
     flex-direction: column; 
     margin-left:33px;
     position: absolute;
-    margin-top:42px;
+    margin-top:50px;
+    
 }
 
 .search_area{
@@ -125,16 +140,11 @@ input:focus {
     }
 
 
-.map_img{
-    border-radius: 30px;
-    margin-top:24px;
-    margin-left: 38%;
-    margin-bottom: 20px;
-}
+
 .map_img{
     display:flex;
-    margin-left: 730px;
-    margin-top:12px;
+    margin-left: 728px;
+    margin-top:10px;
     border-radius: 40px;
 }
 
