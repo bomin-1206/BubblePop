@@ -41,6 +41,10 @@ app.get("/login.html", function (req, res) {
 app.get("/home.html", function (req, res) {
     res.sendFile(__dirname + "/public/views/home.html");
 });
+app.get("/map.html", function (req, res) {
+    res.sendFile(__dirname + "/public/views/map.html");
+});
+
 
 app.post("/register",function(req,res){
     const param =[req.body.id,req.body.pswd1];
@@ -50,32 +54,35 @@ app.post("/register",function(req,res){
             res.status(500).send('Internal Server Error');
         }
         console.log('inserted');
+        res.redirect('/');
     })
 });
 app.post('/login', function(req, res){
-    const userId= req.body.id;
-    const password=req.body.pw;
-    let result='';
-  
-    const rows = conn.query('select id, password from users where id=?',[userId])
-    conn.end();
-  
-    if(rows.length==0){
-      result='등록되지 않은 사용자 입니다.';
-    }
-    else {
-      const db_user=rows[0];
-      if(db_user.user_password==password){
-        result='반갑습니다.';
-        req.session.userId=userId;
-        res.redirect('/main');
-        return;
-      }
-      else
-        result='아이디 또는 비밀번호가 잘못 입력되었습니다.';
-    }
-   
-    res.render('login', {result:result});
-  });
+    var userId= req.body.id;
+    var pw=req.body.pw;
+    
+    conn.query("SELECT id,password FROM users WHERE id=?",userId,function(err,results){
+        if(err){
+            console.log(err);
+        }
+        if(!results[0]){
+            console.log("등록되지 않은 사용자입니다");
+            res.redirect('/');
+        }
+        else{
+            var user = results[0];
+            if(user.password==pw){
+                res.redirect('/home.html');
+                return;
+            }
+            else{
+                console.log("아이디 또는 비밀번호가 잘못 입력되었습니다.")
+                res.redirect('/');
+            }
+        }
+    
+
+    })
+});
 
 module.exports = app;

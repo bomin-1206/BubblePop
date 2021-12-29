@@ -8,6 +8,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Gothic&family=Roboto+Condensed:ital@1&display=swap" rel="stylesheet">
     <script src="jquery-3.4.1.js"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("pw");
+            var y = document.getElementById("hide1");
+            var z = document.getElementById("hide2");
+
+            if(x.type === 'password') {
+                x.type = "text";
+                y.style.display = "none";
+                z.style.display = "block";
+            }
+            else {
+                x.type = "password";
+                y.style.display = "block";
+                z.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
     <section class="login-form">
@@ -37,24 +55,6 @@
         </div>
         </form>
         </div>
-            <script>
-                function myFunction() {
-                    var x = document.getElementById("pw");
-                    var y = document.getElementById("hide1");
-                    var z = document.getElementById("hide2");
-
-                    if(x.type === 'password') {
-                        x.type = "text";
-                        y.style.display = "none";
-                        z.style.display = "block";
-                    }
-                    else {
-                        x.type = "password";
-                        y.style.display = "block";
-                        z.style.display = "none";
-                    }
-                }
-            </script>
     </section>
 </body>
 </html>
