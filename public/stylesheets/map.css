@@ -8,12 +8,13 @@
 }
 
 body{
-    background-image: url("../views/map3.png");
+    background-image: url("../public/views/map3.png");
 }
 
 .contents{
     display: flex;
-    width:635px;
+    width:70%;
+    height: 50%;
     margin:auto;
 }
 
@@ -22,9 +23,9 @@ body{
     width: 100px;;
     height: 220px;
     text-align:center;
-    background:#000;
+    background:#fff;
     border-radius: 100px;
-    margin-top:-450px;
+    margin-top: -250px;
 }
 
 
@@ -35,7 +36,8 @@ body{
 }
 
 .image_map2{
-    
+    width: 100px;
+    margin:auto;
 }
 
 .contents>li>.image_map2>img{
@@ -46,10 +48,14 @@ body{
 }
 
 .contents>li>.image_text{
-    color:#fff;
+    color:#7B7B7B;
+    font-size: 15px;
+    font-style: bold;
 }
 
-
+.contents>li:not(:last-child){
+    margin-right: 20px;
+}
 
 .course>h1{
     font-size: 42px;
@@ -85,7 +91,8 @@ body{
 
 .search_input{
     display: flex;
-    margin-left: 50px;
+
+    margin-right: 50px;
 }
 
 .search_input::-webkit-input-placeholder{
@@ -110,7 +117,7 @@ body{
     height:40px;
     background:rgba(0,0,0,0);
     color:#000;
-    padding-left:10px;
+    padding-left:55px;
 }
 
 input:focus {
