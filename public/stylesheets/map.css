@@ -1,105 +1,120 @@
-*{
-    font-family: 'Nanum Gothic', sans-serif;
-    color:#000;
+* {
+
+    color: #000;
     text-decoration: none;
     border-collapse: collapse;
-    margin:0px;
-    padding:0px;
+    margin: 0px;
+    padding: 0px;
 }
 
-body{
-    background-image: url("../public/views/map3.png");
+body {
+    background-image: url("../photo/map3.png");
 }
 
-.contents{
+
+.contents {
     display: flex;
-    width:70%;
-    height: 50%;
-    margin:auto;
+    width: 75%;
+    height: 70%;
 }
 
-.contents>li{
-    flex:1;
-    width: 100px;;
+.contents>li {
+    width: 150px;
+    ;
     height: 220px;
-    text-align:center;
-    background:#fff;
+    text-align: center;
+    background: #fff;
     border-radius: 100px;
-    margin-top: -250px;
+    background-color: rgba(255, 255, 255, 0.93);
+    list-style: none;
+    margin: 0px auto;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 
 
-.image_map>img{
+.image_map {
     width: 100%;
-    margin-top:30px;
+    height: 300px;
+    background-image: url(../public/photo/map2.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.image_map2{
+.image_map2 {
     width: 100px;
-    margin:auto;
+    margin: auto;
+    margin-top: 40px;
 }
 
-.contents>li>.image_map2>img{
+.contents>li>.image_map2>img {
     position: relative;
-    width:78px;
-    height:90px;
-    
 }
 
-.contents>li>.image_text{
-    color:#7B7B7B;
-    font-size: 15px;
-    font-style: bold;
+.image_text {
+    color: #7B7B7B;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-.contents>li:not(:last-child){
-    margin-right: 20px;
+.image_text_2 {
+    color: #7B7B7B;
+    font-size: 14px;
+    margin-top: 22px;
+    font-weight: bold;
 }
 
-.course>h1{
+
+.course>h1 {
     font-size: 42px;
-    text-align:center;
-    color:#7B7B7B;
-    margin-top:40px;
-    font-style: light;
+    text-align: center;
+    color: #7B7B7B;
+    margin:20px 0px 20px 0px;
+    font-weight: normal;
 }
 
 .box {
-    width: 670px;
-    height: 880px;
+    width: 665px;
+    height: 890px;
     background: white;
     border-radius: 40px;
     display: flex;
     align-items: center;
-    flex-direction: column; 
-    margin-left:33px;
+    flex-direction: column;
+    margin-left: 33px;
     position: absolute;
-    margin-top:42px;
+    margin-top: 50px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+
 }
 
-.search_area{
+
+
+
+.search_area {
     width: 500px;
     height: 40px;
     border-radius: 60px;
-    margin-top:24px;
+    margin-top: 24px;
     line-height: 1.5;
-    border:1px solid#FFA0B7;
+    border: 1px solid#FFA0B7;
     position: relative;
     display: flex;
 }
 
-.search_input{
+.search_input {
     display: flex;
 
     margin-right: 50px;
 }
 
-.search_input::-webkit-input-placeholder{
-   text-align: left;
+.search_input::-webkit-input-placeholder {
+    text-align: left;
 }
 
-.search_area>form>img{
+.search_area>form>img {
     cursor: pointer;
     width: 20px;
     height: 20px;
@@ -107,30 +122,32 @@ body{
     margin-right: auto;
     position: absolute;
     left: 10px;
-    top : 50%;
+    top: 50%;
     transform: translate(0%, -50%);
 }
 
-.search_area > form > input{
+.search_area>form>input {
     border: none;
-    width:250px;
-    height:40px;
-    background:rgba(0,0,0,0);
-    color:#000;
-    padding-left:55px;
+    width: 480px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0);
+    color: #000;
+    padding-left: 55px;
 }
 
 input:focus {
-    outline:none;
-    }
-
-
-.map_img{
-    border-radius: 30px;
-    margin-top:24px;
-    margin-left: 38%;
-    margin-bottom: 20px;
+    outline: none;
 }
+
+
+
+.map_img {
+    display: flex;
+    margin-left: 728px;
+    margin-top: 10px;
+    border-radius: 40px;
+}
+
 
 .wrap {
     position: absolute;
@@ -141,14 +158,13 @@ input:focus {
     border-radius: 100px;
     overflow: hidden;
     font-size: 14px;
-    padding-top:6px; 
-    margin:auto;
+    padding-top: 6px;
+    margin: auto;
     font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
     text-align: center;
     line-height: 1.5;
     background-color: white;
     border: 1px solid #FFA0B7
-    
 }
 
 .wrap * {
@@ -243,125 +259,161 @@ input:focus {
     color: #5085BB;
 }
 
-    .dot {
-        overflow: hidden;
-        float: left;
-        width: 12px;
-        height: 12px;
-        background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/mini_circle.png');
-    }
+.dot {
+    overflow: hidden;
+    float: left;
+    width: 12px;
+    height: 12px;
+    background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/mini_circle.png');
+}
 
-    .dotOverlay {
-        position: relative;
-        bottom: 10px;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        border-bottom: 2px solid #ddd;
-        float: left;
-        font-size: 12px;
-        padding: 5px;
-        background: #fff;
-    }
+.dotOverlay {
+    position: relative;
+    bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    border-bottom: 2px solid #ddd;
+    float: left;
+    font-size: 12px;
+    padding: 5px;
+    background: #fff;
+}
 
-    .dotOverlay:nth-of-type(n) {
-        border: 0;
-        box-shadow: 0px 1px 2px #888;
-    }
+.dotOverlay:nth-of-type(n) {
+    border: 0;
+    box-shadow: 0px 1px 2px #888;
+}
 
-    .number {
-        font-weight: bold;
-        color: #ee6152;
-    }
+.number {
+    font-weight: bold;
+    color: #ee6152;
+}
 
-    .dotOverlay:after {
-        content: '';
-        position: absolute;
-        margin-left: -6px;
-        left: 50%;
-        bottom: -8px;
-        width: 11px;
-        height: 8px;
-        background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white_small.png')
-    }
+.dotOverlay:after {
+    content: '';
+    position: absolute;
+    margin-left: -6px;
+    left: 50%;
+    bottom: -8px;
+    width: 11px;
+    height: 8px;
+    background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white_small.png')
+}
 
-    .distanceInfo {
-        position: relative;
-        top: 5px;
-        left: 5px;
-        list-style: none;
-        margin: 0;
-    }
+.distanceInfo {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    list-style: none;
+    margin: 0;
+}
 
-    .distanceInfo .label {
-        display: inline-block;
-        width: 50px;
-    }
+.distanceInfo .label {
+    display: inline-block;
+    width: 50px;
+}
 
-    .distanceInfo:after {
-        content: none;
-    }
+.distanceInfo:after {
+    content: none;
+}
 
-    #mapwrap {
-        position: relative;
-        overflow: hidden;
-    }
+#mapwrap {
+    position: relative;
+    overflow: hidden;
+}
 
-    .category,
-    .category * {
-        margin: 0;
-        padding: 0;
-        color: #000;
-    }
+.category,
+.category * {
+    margin: 0;
+    padding: 0;
+    color: #000;
+}
 
 
-    .category {
-        position: absolute;
-        overflow: hidden;
-        top: 38px;
-        left: 39%;
-        width: 150px;
-        height: 50px;
-        z-index: 10;
-        border: 1px solid black;
-        font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
-        font-size: 12px;
-        text-align: center;
-        background-color: #fff;
-    }
+.category {
+    position: absolute;
+    overflow: hidden;
+    top: 30px;
+    left: 39%;
+    width: 150px;
+    height: 50px;
+    z-index: 10;
+    border: 1px solid black;
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    background-color: #fff;
+}
 
-    .category .menu_selected {
-        background: #FF5F4A;
-        color: #fff;
-        border-left: 1px solid #915B2F;
-        border-right: 1px solid #915B2F;
-        margin: 0 -1px;
-    }
+.category .menu_selected {
+    background: #FF5F4A;
+    color: #fff;
+    border-left: 1px solid #915B2F;
+    border-right: 1px solid #915B2F;
+    margin: 0 -1px;
+}
 
-    .category li {
-        list-style: none;
-        float: left;
-        width: 50px;
-        height: 45px;
-        padding-top: 5px;
-        cursor: pointer;
-    }
+.category li {
+    list-style: none;
+    float: left;
+    width: 50px;
+    height: 45px;
+    padding-top: 5px;
+    cursor: pointer;
+}
 
-    .category .ico_comm {
-        display: block;
-        margin: 0 auto 2px;
-        width: 22px;
-        height: 26px;
-        background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png') no-repeat;
-    }
+.category .ico_comm {
+    display: block;
+    margin: 0 auto 2px;
+    width: 22px;
+    height: 26px;
+    background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png') no-repeat;
+}
 
-    .category .ico_coffee {
-        background-position: -10px 0;
-    }
+.category .ico_coffee {
+    background-position: -10px 0;
+}
 
-    .category .ico_store {
-        background-position: -10px -36px;
-    }
+.category .ico_store {
+    background-position: -10px -36px;
+}
 
-    .category .ico_carpark {
-        background-position: -10px -72px;
-    }
+.category .ico_carpark {
+    background-position: -10px -72px;
+}
+
+.scrollWrap {
+    width: 90%;
+    height: 400px;
+    margin: auto 0px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.scrollWrapBox {
+    max-width: 98%;
+    min-height: 140px;
+    border: 1px solid black
+}
+
+
+
+.menu-btn button{
+    background: #FFCFDB;
+    width: 125px;
+    height: 50px;
+    font-size: 16px;
+    text-align:center;
+    margin: 20px 10px 20px 10px;
+    border: none;
+    border-radius: 60px;
+    color:#fff;
+    font-weight: bold;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.menu-btn button:hover{
+    background-color: #FFA0B7;
+}
