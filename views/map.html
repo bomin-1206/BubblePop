@@ -14,9 +14,9 @@
 
 <body>
 
-    <botton type="submit">back</botton>
     
     <div class="box">
+       
         <div class="search_area">
             <form>
             <input type="search" placeholder="장소검색">
@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <div class="map_img" id="map" style="width:1160px;height:920px;"></div>
+    <div class="map_img" id="map" style="width:1160px;height:940px;"></div>
     <div class="category">
         <ul>
             <li id="coffeeMenu" onclick="changeMarker('coffee')">
@@ -224,6 +224,7 @@
             // 지도 확대 축소제어
             var zoomControl = new kakao.maps.ZoomControl();
             map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+            
             
             // 커피숍 마커가 표시될 좌표 배열입니다
             var coffeePositions = [
