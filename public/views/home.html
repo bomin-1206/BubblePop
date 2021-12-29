@@ -11,13 +11,13 @@
 </head>
 <body>
     <div class="user-profile">
-        <div>test 님</div>
+        <span id="name" style="position:fixed; top:63px; right:138px;"></span>
         <div class="pro">
             <img class="profile" src="../photo/profile.png" onclick="showBalloon()">
             <div class="balloon hidden">
                 <div class="balloon-logout">
                     <img class="logout_img" src="../photo/logout.png">
-                    <div class="logout-text" href="../views/login.html">로그아웃</div>
+                    <a class="logout-text" href="../views/login.html">로그아웃</a>
                 </div>
                 <div class="balloons arrow-border"></div>
                 <div class="balloons arrow"></div>
@@ -56,6 +56,21 @@
             const element = document.querySelector('.balloon');
             element.classList.toggle('hidden');
         }
+    </script>
+    <script>
+        var urlParams;
+        (window.onpopstate = function () {
+            var match,
+                pl     = /\+/g,  // Regex for replacing addition symbol with a space
+                search = /([^&=]+)=?([^&]*)/g,
+                decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+                query  = window.location.search.substring(1);
+        
+            urlParams = {};
+            while (match = search.exec(query))
+            urlParams[decode(match[1])] = decode(match[2]);
+        })();
+        document.getElementById('name').innerHTML = urlParams.id + " 님";
     </script>
 </body>
 </html>
