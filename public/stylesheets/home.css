@@ -18,64 +18,77 @@ body {
 .group {
   margin: 10px auto;
   display: flex;
+ 
 }
 
 .cafe {
   margin-left: 580px;
-  flex: 1;
   display: flex;
   background: white;
   width: 375px;
   height: 547px;
   border-radius: 170px;
   background-color:rgba(255, 255, 255, 0.8);
+  align-items: center;
+  justify-content: center;
 }
 
 .restaurant {
   margin-left: 60px;
-  flex: 1;
   display: flex;
   background: white;
   width: 375px;
   height: 547px;
   border-radius: 170px;
   background-color:rgba(255, 255, 255, 0.8);
+  align-items: center;
+  justify-content: center;
 }
 
 .place {
   margin-left: 60px;
-  flex: 1;
   display: flex;
   background: white;
   width: 375px;
   height: 547px;
   border-radius: 170px;
   background-color:rgba(255, 255, 255, 0.8);
+  align-items: center;
+  justify-content: center;
+}
+
+.menuWrap {
+  display: flex;
+  flex-direction: column;
 }
 
 .cafe_img {
   width: 192px;
   height: 230px;
   display: block;
-  margin: 100px auto;
+  margin: 0px auto;
 }
 
 .restaurant_img {
   width: 287px;
   height: 184px;
   display: block;
-  margin: 120px 0 0 30px;
+  margin: 17px auto;
+  margin-bottom: 30px;
+  margin-right: 20px; 
 }
 
 .place_img {
   width: 212px;
   height: 217px;
   display: block;
-  margin: 100px auto;
+  margin: 0px auto;
 }
 
 .home_text {
-  font-size: 14px;
+  color: #7B7B7B;
+  font-size: 25px;
   margin-top: 10px;
   font-weight: bold;
+  text-align: center;
 }
