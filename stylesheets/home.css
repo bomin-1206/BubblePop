@@ -12,6 +12,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url("../views/home.png") no-repeat center;
+  background: url("../photo/home.png") no-repeat center;
   background-size: cover;
 }
