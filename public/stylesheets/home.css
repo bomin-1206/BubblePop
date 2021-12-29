@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -182,7 +182,7 @@ body {
   height: 18px;
 }
 
-.logout-text {
+#logout-text {
   font-size: 14px;
   margin-left: 7px;
 }

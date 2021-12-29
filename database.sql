@@ -7,20 +7,37 @@ create table users(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*카페,레스토랑,장소 위도,경도,이름 db*/
-create table CAFE(
-    name varchar(20) NOT NULL PRIMARY KEY,
-    x_location decimal(16,12) NOT NULL,
-    y_location decimal(16,12) NOT NULL
+create table `ALL`(
+    type varchar(20) NOT NULL,
+    title varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL PRIMARY KEY,
+    `add` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+    add2 varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    start float(2,1) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-create table RESTAURANT(
-    name varchar(20) NOT NULL PRIMARY KEY,
-    x_location decimal(16,12) NOT NULL,
-    y_location decimal(16,12) NOT NULL
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-create table PLACE(
-    name varchar(20) NOT NULL PRIMARY KEY,
-    x_location decimal(16,12) NOT NULL,
-    y_location decimal(16,12) NOT NULL
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSERT INTO `ALL`(type,title,`add`,add2,start) 
+VALUES
+('RESTAURANT','포냐','대구 달성군 구지면 과학마을로5길 43','(지번) 대구 달성군 구지면 응암리 1196-4',0.0),
+('RESTAURANT','홍유','대구 달성군 구지면 과학마을로1길 2','(지번) 구지면 응암리 1193',5.0),
+('RESTAURANT','김태주선산곱창 구지점','대구 달성군 구지면 과학마을로 17 1층','(지번) 구지면 응암리 1193-1',0.0),
+('RESTAURANT','막창도둑 구지점','대구 달성군 구지면 과학마을로4길 1-4','(지번) 구지면 응암리 1209-2',0.0),
+('RESTAURANT','쿠우쿠우 대구현풍테크노점','대구 달성군 유가읍 테크노중앙대로 254 하이젠스타 10층','(지번) 유가읍 봉리 606',3.7),
+('RESTAURANT','윤옥연할매떡볶이','대구 달성군 유가읍 테크노상업로 96 파스텔시티 113','(지번) 유가읍 봉리 608',1.0),
+('RESTAURANT','오유미당 유가점','대구 달성군 유가읍 테크노상업로 100 1층','(지번) 유가읍 봉리 608-2',4.3),
+('RESTAURANT','마라신 현풍테크노점','대구 달성군 유가읍 테크노상업로4길 8-11','(지번) 유가읍 봉리 610',5.0),
+('cafe','FOR ME','대구 달성군 구지면 국가산단북로34길 10','(지번) 구지면 화산리 1105',5.0),
+('cafe','별의별','대구 달성군 구지면 국가산단북로31길 48','(지번) 구지면 화산리 318',5.0),
+('cafe','니우나이','대구 달성군 구지면 창리로 103 1층','(지번) 구지면 창리 310-6',4.0),
+('cafe','쏘앤놀','대구 달성군 구지면 국가산단대로66길 7','(지번) 구지면 창리 1445-5',5.0),
+('cafe','호떡공장','대구 달성군 유가읍 테크노상업로 82 해피타워 209호','(지번) 유가읍 봉리 607',5.0),
+('cafe','디저트39','대구 달성군 유가읍 테크노상업로 96 파스텔시티 109호','(지번) 유가읍 봉리 608',1.7),
+('cafe','BonPatissier','대구 달성군 현풍읍 테크노상업로 52 107호','(지번) 현풍읍 중리 489-3',5.0),
+('cafe','호이차','대구 달성군 유가읍 테크노공원로 69 105호','대구 달성군 유가읍 테크노공원로 69 105호',4.5),
+('place','이양서원','대구 달성군 현풍읍 삼강3길 23','(지번) 현풍읍 대리 907-3',0.0),
+('place','대니산','대구 달성군 구지면 화산리','대구 달성군 구지면 화산리',4.0),
+('place','도동서원','대구 달성군 구지면 도동서원로 1','(지번) 구지면 도동리 35',3.5),
+('place','다람재','대구 달성군 구지면 도동리 산 1-5','대구 달성군 구지면 도동리 산 1-5',3.7),
+('place','에코트리공원','대구 달성군 현풍읍 중리 487-3','대구 달성군 현풍읍 중리 487-3',0.0),
+('place','B&B 당구장','대구 달성군 현풍읍 테크노중앙대로 243','(지번) 현풍읍 중리 491-2',4.0),
+('place','몬스트클라이밍짐','대구 달성군 유가읍 테크노상업로 98 비슬타워 705호','(지번) 유가읍 봉리 608-1',0.0),
+('place','국립대구과학관','대구 달성군 유가읍 테크노대로6길 20','(지번) 유가읍 상리 917-1',4.3);
