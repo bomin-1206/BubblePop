@@ -36,6 +36,7 @@ body {
   background-color:rgba(255, 255, 255, 0.8);
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .restaurant {
@@ -48,6 +49,7 @@ body {
   background-color:rgba(255, 255, 255, 0.8);
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .place {
@@ -60,6 +62,7 @@ body {
   background-color:rgba(255, 255, 255, 0.8);
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .menuWrap {
