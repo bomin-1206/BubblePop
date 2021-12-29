@@ -67,6 +67,7 @@ app.post('/login', function(req, res){
         }
         if(!results[0]){
             console.log("등록되지 않은 사용자입니다");
+            res.redirect('/');
         }
         else{
             var user = results[0];
@@ -76,6 +77,7 @@ app.post('/login', function(req, res){
             }
             else{
                 console.log("아이디 또는 비밀번호가 잘못 입력되었습니다.")
+                res.redirect('/');
             }
         }
     
