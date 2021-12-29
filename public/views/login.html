@@ -22,8 +22,8 @@
             <div class="int-area">
                 <input type="password" name="pw" id="pw" autocomplete="off" required>
                 <span class="eye" onclick="myFunction()">
-                    <img id="hide1" class="open-eye" src="../photo/eye.png"></img>
-                    <img id="hide2" class="close-eye" src="../photo/eye2.png"></img>
+                    <img id="hide1" class="close-eye" src="../photo/eye2.png"></img>
+                    <img id="hide2" class="open-eye" src="../photo/eye.png"></img>
                 </span>
                 <span></span>
                 <label for="pw" class="pw-label">비밀번호</label>
@@ -45,12 +45,12 @@
 
                     if(x.type === 'password') {
                         x.type = "text";
-                        y.style.dispaly = "none";
+                        y.style.display = "none";
                         z.style.display = "block";
                     }
                     else {
                         x.type = "password";
-                        y.style.dispaly = "block";
+                        y.style.display = "block";
                         z.style.display = "none";
                     }
                 }
