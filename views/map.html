@@ -14,42 +14,59 @@
 
 <body>
 
-    
     <div class="box">
-       
+
         <div class="search_area">
             <form>
-            <input type="search" placeholder="장소검색">
-            <img calss="img1" src="../public/photo/map1.png">
+                <input type="search" placeholder="장소검색">
+                <img calss="img1" src="../public/photo/map1.png">
             </form>
         </div>
         <div class="course">
             <h1>추천 코스</h1>
         </div>
         <div class="image_map">
-            <img src="../public/photo/map2.png">
+            <div class="contents">
+                <li>
+                    <div class="image_map2">
+                        <img src="../public/photo/icon1.png">
+                    </div>
+                    <div class="image_text">추천 된 카페</div>
+                </li>
+
+                <li>
+                    <div class="image_map2">
+                        <img src="../public/photo/icon2.png">
+                    </div>
+                    <div class="image_text_2">추천 된 식당</div>
+                </li>
+
+                <li>
+                    <div class="image_map2">
+                        <img src="../public/photo/icon3.png">
+                    </div>
+                    <div class="image_text">추천 된 플레이스</div>
+                </li>
+            </div>
         </div>
-        <div class="contents">
-            <li>
-                <div class="image_map2">
-                    <img src="../public/photo/icon1.png">
-                </div>
-                <div class="image_text">추천 된 카페</div>
-            </li>
 
-            <li>
-                <div class="image_map2">
-                    <img src="../public/photo/icon2.png">
-                </div>
-                <div class="image_text_2">추천 된 식당</div>
-            </li>
+        <div class=menu-btn>
+            <button type="submit" id="all">ALL</button>
+            <button type="submit" id="cafe">CAFE</button>
+            <button type="submit" id="rest">RESTAURANT</button>
+            <button type="submit" id="palce">PLACE</button>
+        </div>
 
-            <li>
-                <div class="image_map2">
-                    <img src="../public/photo/icon3.png">
-                </div>
-                <div class="image_text">추천 된 플레이스</div>
-            </li>
+        <div class="scrollWrap">
+            <div class="scrollWrapBox"></div>
+            <div class="scrollWrapBox"></div>
+            <div class="scrollWrapBox"></div>
+            <div class="scrollWrapBox"></div>
+            <div class="scrollWrapBox"></div>
+            <div class="scrollWrapBox"></div>
+            <div class="scrollWrapBox"></div>
+            <div class="scrollWrapBox"></div>
+
         </div>
     </div>
 
@@ -70,41 +87,41 @@
             </li>
         </ul>
     </div>
-</div>
+    </div>
 
 
-<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ae5e241bc9f725d7809418c2b21f0a62"></script>
-<script>
-    var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ae5e241bc9f725d7809418c2b21f0a62"></script>
+    <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
             mapOption = {
                 center: new kakao.maps.LatLng(35.66325395378856, 128.4136840979611), // 지도의 중심좌표
                 level: 3 // 지도의 확대 레벨
             };
-            
-            var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-            
-            // 마커를 표시할 위치와 title 객체 배열입니다 
-            var positions = [
-                {
-                    //카페
-                    title: '구지 커피명가',
-                    latlng: new kakao.maps.LatLng(35.640390387840746, 128.40354915598132)
-                },
-                {
-                    title: '니우나이',
-                    latlng: new kakao.maps.LatLng(35.66108633334286, 128.41536076103677)
-                },
-                {
-                    title: '이디야커피',
-                    latlng: new kakao.maps.LatLng(35.65594828647931, 128.41904323079987)
-                },
-                {
-                    title: '별의별',
-                    latlng: new kakao.maps.LatLng(35.66586434869009, 128.4106894001103)
-                },
-                {
-                    title: '기브온',
-                    latlng: new kakao.maps.LatLng(35.70421378042498, 128.36766913873117)
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        // 마커를 표시할 위치와 title 객체 배열입니다 
+        var positions = [
+            {
+                //카페
+                title: '구지 커피명가',
+                latlng: new kakao.maps.LatLng(35.640390387840746, 128.40354915598132)
+            },
+            {
+                title: '니우나이',
+                latlng: new kakao.maps.LatLng(35.66108633334286, 128.41536076103677)
+            },
+            {
+                title: '이디야커피',
+                latlng: new kakao.maps.LatLng(35.65594828647931, 128.41904323079987)
+            },
+            {
+                title: '별의별',
+                latlng: new kakao.maps.LatLng(35.66586434869009, 128.4106894001103)
+            },
+            {
+                title: '기브온',
+                latlng: new kakao.maps.LatLng(35.70421378042498, 128.36766913873117)
             },
             {
                 title: '커피팀버',
@@ -127,7 +144,267 @@
                 latlng: new kakao.maps.LatLng(35.678082150742945, 128.45555984614464)
             },
             {
-                //레스토랑
+                title: 'FOR ME',
+                latlng: new kakao.maps.LatLng(35.66227829171159, 128.4091784089599)
+            },
+            {
+                title: '별의별',
+                latlng: new kakao.maps.LatLng(35.66509168288331, 128.4106815609278)
+            },
+            {
+                title: '니우나이',
+                latlng: new kakao.maps.LatLng(35.66056684475718, 128.41538681612533)
+            },
+            {
+                title: '엘리시아',
+                latlng: new kakao.maps.LatLng(35.66382884286105, 128.41557863012872)
+            },
+            {
+                title: '아이럽베지',
+                latlng: new kakao.maps.LatLng(35.660566144601724, 128.4187395529531)
+            },
+            {
+                title: '쏘앤놀',
+                latlng: new kakao.maps.LatLng(35.65956016572129, 128.418960666347)
+            },
+            {
+                title: '카페콤마',
+                latlng: new kakao.maps.LatLng(35.65890656835939, 128.42094826495708)
+            },
+            {
+                title: '설렘카페',
+                latlng: new kakao.maps.LatLng(35.65455146541558, 128.41702706693255)
+            },
+            {
+                title: '명랑핫도그',
+                latlng: new kakao.maps.LatLng(35.65572466930405, 128.41921881933126)
+            },
+            {
+                title: '프랑스가고싶다',
+                latlng: new kakao.maps.LatLng(35.69144331748498, 128.4535312178727)
+            },
+            {
+                title: '공차',
+                latlng: new kakao.maps.LatLng(35.693395366297466, 128.45860473240808)
+            },
+            {
+                title: '호떡공장',
+                latlng: new kakao.maps.LatLng(35.69311606185227, 128.45884501643133)
+            },
+            {
+                title: '투썸플레이스',
+                latlng: new kakao.maps.LatLng(35.69332950420201, 128.45811365193552)
+            },
+            {
+                title: 'DESSERT39',
+                latlng: new kakao.maps.LatLng(35.693125819229984, 128.45954033838555)
+            },
+            {
+                title: '베스킨라빈스 테크노점',
+                latlng: new kakao.maps.LatLng(35.69266270422293, 128.454408895300769)
+            },
+            {
+                title: 'BonPatissier(본파티쉐)',
+                latlng: new kakao.maps.LatLng(35.693224664523974, 128.45576997006538)
+            },
+            {
+                title: '모모(애견카페)',
+                latlng: new kakao.maps.LatLng(35.6914385463622, 128.45420337721697)
+            },
+            {
+                title: '호이차',
+                latlng: new kakao.maps.LatLng(35.69193947758627, 128.46050940264706)
+            },
+            {
+                title: '한빵울 토스트',
+                latlng: new kakao.maps.LatLng(35.69808484649827, 128.45491142145906)
+            },
+            {
+                title: '취홍',
+                latlng: new kakao.maps.LatLng(35.697974700178655, 128.45421468755603)
+            },
+            {
+                title: '옹기마을',
+                latlng: new kakao.maps.LatLng(35.696611356259126, 128.4524781314375)
+            },
+            {
+                title: '스타벅스',
+                latlng: new kakao.maps.LatLng(35.693400669920536, 128.45917794121686)
+            },
+            {
+                title: '유가제빵소',
+                latlng: new kakao.maps.LatLng(35.67308788798233, 128.45611839818386)
+            },
+            {
+                title: 'TAPROOM3029',
+                latlng: new kakao.maps.LatLng(35.662343781696116, 128.3984761035285)
+            },
+            {
+                title: '교동도나스',
+                latlng: new kakao.maps.LatLng(35.693466519911134, 128.45993996269573)
+            },
+            {
+                title: '팔공티',
+                latlng: new kakao.maps.LatLng(35.6585766950681, 128.4192393858939)
+            },
+
+
+
+            //식당 
+            {
+                title: '포냐',
+                latlng: new kakao.maps.LatLng(35.65873110689948, 128.41886618829017)
+            },
+            {
+                title: '홍유',
+                latlng: new kakao.maps.LatLng(35.65681025687455, 128.41578547015618)
+            },
+            {
+                title: '김태주선산곱창',
+                latlng: new kakao.maps.LatLng(35.656633050476614, 128.41582385464895)
+            },
+            {
+                title: '막창도둑',
+                latlng: new kakao.maps.LatLng(35.65542626161854, 128.41962358103368)
+            },
+            {
+                title: '매콤돈가스와 냉면',
+                latlng: new kakao.maps.LatLng(35.693386828621485, 128.45887955725965)
+            },
+            {
+                title: '쿠우쿠우',
+                latlng: new kakao.maps.LatLng(35.693214855239454, 128.45821577264542)
+            },
+            {
+                title: '윤옥연할매떡볶이',
+                latlng: new kakao.maps.LatLng(35.693196560177675, 128.45942620347452)
+            },
+            {
+                title: '닭강정',
+                latlng: new kakao.maps.LatLng(35.69351367399968, 128.4597280602787)
+            },
+            {
+                title: '오유미당',
+                latlng: new kakao.maps.LatLng(35.69333194354143, 128.4603407845909)
+            },
+            {
+                title: '백종원 본가',
+                latlng: new kakao.maps.LatLng(35.69174541425587, 128.45365586944234)
+            },
+            {
+                title: '스시죠',
+                latlng: new kakao.maps.LatLng(35.69131948239151, 128.45358801259042)
+            },
+            {
+                title: 'Curry KIngdom',
+                latlng: new kakao.maps.LatLng(35.69093791316583, 128.4534365882284)
+            },
+            {
+                title: '국민대패',
+                latlng: new kakao.maps.LatLng(35.69023507866271, 128.45408969697996)
+            },
+            {
+                title: '스시전',
+                latlng: new kakao.maps.LatLng(35.68939130618567, 128.45352072956118)
+            },
+            {
+                title: '차돌풍',
+                latlng: new kakao.maps.LatLng(35.69174477225676, 128.45641530959983)
+            },
+            {
+                title: '우야지막창',
+                latlng: new kakao.maps.LatLng(35.69165282531942, 128.4563442231794)
+            },
+            {
+                title: '마라신',
+                latlng: new kakao.maps.LatLng(35.69287541327025, 128.459549856205)
+            },
+            {
+                title: '이사장네 품격돼지',
+                latlng: new kakao.maps.LatLng(35.692890692327566, 128.45935956048476)
+            },
+            {
+                title: '히나토리',
+                latlng: new kakao.maps.LatLng(35.692503218088156, 128.46013896857488)
+            },
+            {
+                title: '두찜',
+                latlng: new kakao.maps.LatLng(35.697914476543716, 128.45883262614328)
+            },
+            {
+                title: '쉐프의부대찌개',
+                latlng: new kakao.maps.LatLng(35.698322896921304, 128.45831658943123)
+            },
+            {
+                title: '의령소바',
+                latlng: new kakao.maps.LatLng(35.69750131787429, 128.45683844050262)
+            },
+            {
+                title: '김태주선산곱창(현풍점)',
+                latlng: new kakao.maps.LatLng(35.69774535392145, 128.45566761009195)
+            },
+            {
+                title: '만월뒷고기',
+                latlng: new kakao.maps.LatLng(35.697220269234535, 128.4551882571526)
+            },
+            {
+                title: '라라코스트',
+                latlng: new kakao.maps.LatLng(35.693024821716214, 128.46331869983547)
+            },
+            {
+                title: '큰바위가든',
+                latlng: new kakao.maps.LatLng(35.68823859065325, 128.49680571150833)
+            },
+            {
+                title: '길목식당',
+                latlng: new kakao.maps.LatLng(35.692150652450586, 128.5043529206553)
+            },
+            {
+                title: '투고샐러드',
+                latlng: new kakao.maps.LatLng(35.691898710105185, 128.458154001065)
+            },
+            {
+                title: '노브랜드버거',
+                latlng: new kakao.maps.LatLng(35.693334540329595, 128.46177428418562)
+            },
+            {
+                title: '홍콩반점',
+                latlng: new kakao.maps.LatLng(35.69278554194124, 128.4607268636515)
+            },
+            {
+                title: '곱창고',
+                latlng: new kakao.maps.LatLng(35.6927132474135, 128.46056694749524)
+            },
+            {
+                title: '뉴욕야시장',
+                latlng: new kakao.maps.LatLng(35.69232161667002, 128.46056794997983)
+            },
+            {
+                title: '소문난 공주떡볶이',
+                latlng: new kakao.maps.LatLng(35.693092150702014, 128.4601006671349)
+            },
+            {
+                title: '신통치킨',
+                latlng: new kakao.maps.LatLng(35.69323661950197, 128.460506671823)
+            },
+            {
+                title: '야간얼큰우동',
+                latlng: new kakao.maps.LatLng(35.693893604900985, 128.46037434982264)
+            },
+            {
+                title: '현풍옛날화로',
+                latlng: new kakao.maps.LatLng(35.69843475860039, 128.44201530501715)
+            },
+            {
+                title: '현풍닭칼국수 본점',
+                latlng: new kakao.maps.LatLng(35.693996002728504, 128.44582980894407)
+            },
+            {
+                title: '대가웍',
+                latlng: new kakao.maps.LatLng(35.70002946443246, 128.44596736541905)
+            },
+
+            {
                 title: '뜨돈',
                 latlng: new kakao.maps.LatLng(35.69348693539046, 128.45998849830983)
             },
@@ -156,14 +433,6 @@
                 latlng: new kakao.maps.LatLng(35.65566284382456, 128.41923313906088)
             },
             {
-                title: '두찜',
-                latlng: new kakao.maps.LatLng(35.65540385421059, 128.4203261199095)
-            },
-            {
-                title: '60계치킨',
-                latlng: new kakao.maps.LatLng(35.6562808681929, 128.4188876457227)
-            },
-            {
                 //플레이스
                 title: '중앙 공원',
                 latlng: new kakao.maps.LatLng(35.690413256113374, 128.46037706059198)
@@ -173,34 +442,66 @@
                 latlng: new kakao.maps.LatLng(35.693421622079, 128.45630309831012)
             },
             {
-                title: '롯데시네마',
-                latlng: new kakao.maps.LatLng(35.693421622079, 128.45630309831012)
+                title: '에코트리공원',
+                latlng: new kakao.maps.LatLng(35.69136344727974, 128.45119098473276)
+            },
+            {
+                title: '테디베어디아트월드',
+                latlng: new kakao.maps.LatLng(35.69308474162187, 128.46289263061487)
+            },
+            {
+                title: '현풍석빙고(보물673호)',
+                latlng: new kakao.maps.LatLng(35.69744199941369, 128.45137423596805)
+            },
+            {
+                title: '국립대구과학관',
+                latlng: new kakao.maps.LatLng(35.686577141972094, 128.4653672602508)
+            },
+            {
+                title: '비슬산 자연휴양림',
+                latlng: new kakao.maps.LatLng(35.689769380459374, 128.51261989124984)
+            },
+            {
+                title: '유후점핑클럽',
+                latlng: new kakao.maps.LatLng(35.69225030385926, 128.4575670049297)
+            },
+            {
+                title: '이양서원',
+                latlng: new kakao.maps.LatLng(35.665900286263984, 128.42269047806684)
+            },
+            {
+                title: '도동서원',
+                latlng: new kakao.maps.LatLng(35.7010487036083, 128.3718339204208)
+            },
+            {
+                title: '다람재전망대',
+                latlng: new kakao.maps.LatLng(35.69938953037242, 128.37661351639457)
+            },
+            {
+                title: '포토시그니처',
+                latlng: new kakao.maps.LatLng(35.69340141453055, 128.4599859913282)
+            },
+            {
+                title: '현풍구지대니산활공장',
+                latlng: new kakao.maps.LatLng(35.67650380994518, 128.40994631809423)
             },
             {
                 title: '롯데시네마',
                 latlng: new kakao.maps.LatLng(35.693421622079, 128.45630309831012)
             },
-            {
-                title: '롯데시네마',
-                latlng: new kakao.maps.LatLng(35.693421622079, 128.45630309831012)
-            },
-            {
-                title: '롯데시네마',
-                latlng: new kakao.maps.LatLng(35.693421622079, 128.45630309831012)
-            }
         ];
-        
+
         // 마커 이미지의 이미지 주소입니다
         var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
-        
+
         for (var i = 0; i < positions.length; i++) {
-            
+
             // 마커 이미지의 이미지 크기 입니다
             var imageSize = new kakao.maps.Size(24, 35);
-            
+
             // 마커 이미지를 생성합니다    
             var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
-            
+
             // 마커를 생성합니다
             var marker = new kakao.maps.Marker({
                 map: map, // 마커를 표시할 지도
@@ -209,236 +510,238 @@
                 image: markerImage // 마커 이미지 
             });
         }
-        
+
         // 지도에 마커를 표시합니다 
         var marker = new kakao.maps.Marker({
             map: map,
             position: new kakao.maps.LatLng(35.663345, 128.414105)
         });
-        
+
         // 커스텀 오버레이에 표시할 컨텐츠 입니다
         var content = '<div class="wrap">' + "대구소프트웨어고등학교" +
             '</div>';
-            
-            // 마커 위에 커스텀오버레이를 표시
-            var overlay = new kakao.maps.CustomOverlay({
-                content: content,
-                map: map,
-                position: marker.getPosition()
-            });
-            
-            // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
-            kakao.maps.event.addListener(marker, 'click', function () {
-                overlay.setMap(map);
-            });
-            
-            // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다 
-            function closeOverlay() {
-                overlay.setMap(null);
-            }
-            
-            // 지도 확대 축소제어
-            var zoomControl = new kakao.maps.ZoomControl();
-            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-            
-            
-            // 커피숍 마커가 표시될 좌표 배열입니다
-            var coffeePositions = [
-                new kakao.maps.LatLng(35.640390387840746, 128.40354915598132),//구지 커피명가
-                new kakao.maps.LatLng(35.66108633334286, 128.41536076103677),//니우나이,
-                new kakao.maps.LatLng(35.65594828647931, 128.41904323079987),//이디야커피
-                new kakao.maps.LatLng(35.66586434869009, 128.4106894001103),//별의별
-                new kakao.maps.LatLng(35.70421378042498, 128.36766913873117),//기브온
-                new kakao.maps.LatLng(35.694065442653404, 128.4725250718114),//커피팀버
-                new kakao.maps.LatLng(35.6939957357487, 128.45896382286125),//스타벅스
-                new kakao.maps.LatLng(35.678082150742945, 128.45555984614464),//공차
-                new kakao.maps.LatLng(35.70173283020532, 128.4709372040546),//커피로드
-                new kakao.maps.LatLng(35.692463674743564, 128.45048506455862)//파스쿠찌
-            ];
 
-            // 레스토랑 마커가 표시될 좌표 배열입니다
-            var storePositions = [
-                new kakao.maps.LatLng(37.497535461505684, 127.02948149502778),//뜨돈
-                new kakao.maps.LatLng(35.657004011642435, 128.41572984392096),//홍유
-                new kakao.maps.LatLng(35.65562127928077, 128.41871695826538),//대동육지도
-                new kakao.maps.LatLng(35.69886983707128, 128.45012984057445),//예가수제순대
-                new kakao.maps.LatLng(35.6562808681929, 128.4188876457227),//60계치킨
-                new kakao.maps.LatLng(35.65609180749139, 128.41920749916352),//신참떡볶이
-                new kakao.maps.LatLng(35.65566284382456, 128.41923313906088),//피자마루
-                new kakao.maps.LatLng(37.49996818951873, 127.02943721562295),
-                new kakao.maps.LatLng(37.49996818951873, 127.02943721562295),
-                new kakao.maps.LatLng(37.49996818951873, 127.02943721562295),
-                new kakao.maps.LatLng(37.49996818951873, 127.02943721562295)
-            ];
-            
-            // 플레이스 마커가 표시될 좌표 배열입니다
-            var carparkPositions = [
-                new kakao.maps.LatLng(37.49966168796031, 127.03007039430118),
-                new kakao.maps.LatLng(37.499463762912974, 127.0288828824399),
-                new kakao.maps.LatLng(37.49896834100913, 127.02833986892401),
-                new kakao.maps.LatLng(37.49893267508434, 127.02673400572665),
-                new kakao.maps.LatLng(37.49872543597439, 127.02676785815386),
-                new kakao.maps.LatLng(37.49813096097184, 127.02591949495914),
-                new kakao.maps.LatLng(37.497680616783086, 127.02518427952202)
+        // 마커 위에 커스텀오버레이를 표시
+        var overlay = new kakao.maps.CustomOverlay({
+            content: content,
+            map: map,
+            position: marker.getPosition()
+        });
+
+        // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
+        kakao.maps.event.addListener(marker, 'click', function () {
+            overlay.setMap(map);
+        });
+
+        // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다 
+        function closeOverlay() {
+            overlay.setMap(null);
+        }
+
+        // 지도 확대 축소제어
+        var zoomControl = new kakao.maps.ZoomControl();
+        map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+
+        // 커피숍 마커가 표시될 좌표 배열입니다
+        var coffeePositions = [
+            new kakao.maps.LatLng(35.640390387840746, 128.40354915598132),//구지 커피명가
+            new kakao.maps.LatLng(35.66108633334286, 128.41536076103677),//니우나이,
+            new kakao.maps.LatLng(35.65594828647931, 128.41904323079987),//이디야커피
+            new kakao.maps.LatLng(35.66586434869009, 128.4106894001103),//별의별
+            new kakao.maps.LatLng(35.70421378042498, 128.36766913873117),//기브온
+            new kakao.maps.LatLng(35.694065442653404, 128.4725250718114),//커피팀버
+            new kakao.maps.LatLng(35.6939957357487, 128.45896382286125),//스타벅스
+            new kakao.maps.LatLng(35.678082150742945, 128.45555984614464),//공차
+            new kakao.maps.LatLng(35.70173283020532, 128.4709372040546),//커피로드
+            new kakao.maps.LatLng(35.692463674743564, 128.45048506455862)//파스쿠찌
         ];
-        
+
+        // 레스토랑 마커가 표시될 좌표 배열입니다
+        var storePositions = [
+            new kakao.maps.LatLng(37.497535461505684, 127.02948149502778),//뜨돈
+            new kakao.maps.LatLng(35.657004011642435, 128.41572984392096),//홍유
+            new kakao.maps.LatLng(35.65562127928077, 128.41871695826538),//대동육지도
+            new kakao.maps.LatLng(35.69886983707128, 128.45012984057445),//예가수제순대
+            new kakao.maps.LatLng(35.6562808681929, 128.4188876457227),//60계치킨
+            new kakao.maps.LatLng(35.65609180749139, 128.41920749916352),//신참떡볶이
+            new kakao.maps.LatLng(35.65566284382456, 128.41923313906088),//피자마루
+            new kakao.maps.LatLng(37.49996818951873, 127.02943721562295),
+            new kakao.maps.LatLng(37.49996818951873, 127.02943721562295),
+            new kakao.maps.LatLng(37.49996818951873, 127.02943721562295),
+            new kakao.maps.LatLng(37.49996818951873, 127.02943721562295)
+        ];
+
+        // 플레이스 마커가 표시될 좌표 배열입니다
+        var carparkPositions = [
+            new kakao.maps.LatLng(37.49966168796031, 127.03007039430118),
+            new kakao.maps.LatLng(37.499463762912974, 127.0288828824399),
+            new kakao.maps.LatLng(37.49896834100913, 127.02833986892401),
+            new kakao.maps.LatLng(37.49893267508434, 127.02673400572665),
+            new kakao.maps.LatLng(37.49872543597439, 127.02676785815386),
+            new kakao.maps.LatLng(37.49813096097184, 127.02591949495914),
+            new kakao.maps.LatLng(37.497680616783086, 127.02518427952202)
+        ];
+
         var markerImageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png';  // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
         coffeeMarkers = [], // 커피숍 마커 객체를 가지고 있을 배열입니다
-        storeMarkers = [], // 편의점 마커 객체를 가지고 있을 배열입니다
-        carparkMarkers = []; // 주차장 마커 객체를 가지고 있을 배열입니다
-        
-        
+            storeMarkers = [], // 편의점 마커 객체를 가지고 있을 배열입니다
+            carparkMarkers = []; // 주차장 마커 객체를 가지고 있을 배열입니다
+
+
         createCoffeeMarkers(); // 커피숍 마커를 생성하고 커피숍 마커 배열에 추가합니다
         createStoreMarkers(); // 편의점 마커를 생성하고 편의점 마커 배열에 추가합니다
         createCarparkMarkers(); // 주차장 마커를 생성하고 주차장 마커 배열에 추가합니다
-        
+
         changeMarker('coffee'); // 지도에 커피숍 마커가 보이도록 설정합니다    
-        
-        
+
+
         // 마커이미지의 주소와, 크기, 옵션으로 마커 이미지를 생성하여 리턴하는 함수입니다
         function createMarkerImage(src, size, options) {
             var markerImage = new kakao.maps.MarkerImage(src, size, options);
             return markerImage;
         }
-        
+
         // 좌표와 마커이미지를 받아 마커를 생성하여 리턴하는 함수입니다
         function createMarker(position, image) {
             var marker = new kakao.maps.Marker({
                 position: position,
                 image: image
             });
-            
+
             return marker;
         }
-        
+
         // 커피숍 마커를 생성하고 커피숍 마커 배열에 추가하는 함수입니다
         function createCoffeeMarkers() {
-            
+
             for (var i = 0; i < coffeePositions.length; i++) {
-                
+
                 var imageSize = new kakao.maps.Size(22, 26),
-                imageOptions = {
-                    spriteOrigin: new kakao.maps.Point(10, 0),
-                    spriteSize: new kakao.maps.Size(36, 98)
-                };
-                
+                    imageOptions = {
+                        spriteOrigin: new kakao.maps.Point(10, 0),
+                        spriteSize: new kakao.maps.Size(36, 98)
+                    };
+
                 // 마커이미지와 마커를 생성합니다
                 var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
-                marker = createMarker(coffeePositions[i], markerImage);
+                    marker = createMarker(coffeePositions[i], markerImage);
 
                 // 생성된 마커를 커피숍 마커 배열에 추가합니다
                 coffeeMarkers.push(marker);
             }
         }
-        
+
         // 커피숍 마커들의 지도 표시 여부를 설정하는 함수입니다
         function setCoffeeMarkers(map) {
             for (var i = 0; i < coffeeMarkers.length; i++) {
                 coffeeMarkers[i].setMap(map);
             }
         }
-        
+
         // 편의점 마커를 생성하고 편의점 마커 배열에 추가하는 함수입니다
         function createStoreMarkers() {
             for (var i = 0; i < storePositions.length; i++) {
-                
+
                 var imageSize = new kakao.maps.Size(22, 26),
-                imageOptions = {
-                    spriteOrigin: new kakao.maps.Point(10, 36),
-                    spriteSize: new kakao.maps.Size(36, 98)
-                };
-                
+                    imageOptions = {
+                        spriteOrigin: new kakao.maps.Point(10, 36),
+                        spriteSize: new kakao.maps.Size(36, 98)
+                    };
+
                 // 마커이미지와 마커를 생성합니다
                 var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
-                marker = createMarker(storePositions[i], markerImage);
-                
+                    marker = createMarker(storePositions[i], markerImage);
+
                 // 생성된 마커를 편의점 마커 배열에 추가합니다
                 storeMarkers.push(marker);
             }
         }
-        
+
         // 편의점 마커들의 지도 표시 여부를 설정하는 함수입니다
         function setStoreMarkers(map) {
             for (var i = 0; i < storeMarkers.length; i++) {
                 storeMarkers[i].setMap(map);
             }
         }
-        
+
         // 주차장 마커를 생성하고 주차장 마커 배열에 추가하는 함수입니다
         function createCarparkMarkers() {
             for (var i = 0; i < carparkPositions.length; i++) {
-                
+
                 var imageSize = new kakao.maps.Size(22, 26),
-                imageOptions = {
-                    spriteOrigin: new kakao.maps.Point(10, 72),
-                    spriteSize: new kakao.maps.Size(36, 98)
-                };
-                
+                    imageOptions = {
+                        spriteOrigin: new kakao.maps.Point(10, 72),
+                        spriteSize: new kakao.maps.Size(36, 98)
+                    };
+
                 // 마커이미지와 마커를 생성합니다
                 var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
-                marker = createMarker(carparkPositions[i], markerImage);
-                
+                    marker = createMarker(carparkPositions[i], markerImage);
+
                 // 생성된 마커를 주차장 마커 배열에 추가합니다
                 carparkMarkers.push(marker);
             }
         }
-        
+
         // 주차장 마커들의 지도 표시 여부를 설정하는 함수입니다
         function setCarparkMarkers(map) {
             for (var i = 0; i < carparkMarkers.length; i++) {
                 carparkMarkers[i].setMap(map);
             }
         }
-        
+
         // 카테고리를 클릭했을 때 type에 따라 카테고리의 스타일과 지도에 표시되는 마커를 변경합니다
         function changeMarker(type) {
-            
+
             var coffeeMenu = document.getElementById('coffeeMenu');
             var storeMenu = document.getElementById('storeMenu');
             var carparkMenu = document.getElementById('carparkMenu');
-            
+
             // 커피숍 카테고리가 클릭됐을 때
             if (type === 'coffee') {
-                
+
                 // 커피숍 카테고리를 선택된 스타일로 변경하고
                 coffeeMenu.className = 'menu_selected';
-                
+
                 // 편의점과 주차장 카테고리는 선택되지 않은 스타일로 바꿉니다
                 storeMenu.className = '';
                 carparkMenu.className = '';
-                
+
                 // 커피숍 마커들만 지도에 표시하도록 설정합니다
                 setCoffeeMarkers(map);
                 setStoreMarkers(null);
                 setCarparkMarkers(null);
-                
+
             } else if (type === 'store') { // 편의점 카테고리가 클릭됐을 때
-                
+
                 // 편의점 카테고리를 선택된 스타일로 변경하고
                 coffeeMenu.className = '';
                 storeMenu.className = 'menu_selected';
                 carparkMenu.className = '';
-                
+
                 // 편의점 마커들만 지도에 표시하도록 설정합니다
                 setCoffeeMarkers(null);
                 setStoreMarkers(map);
                 setCarparkMarkers(null);
-                
+
             } else if (type === 'carpark') { // 주차장 카테고리가 클릭됐을 때
-                
+
                 // 주차장 카테고리를 선택된 스타일로 변경하고
                 coffeeMenu.className = '';
                 storeMenu.className = '';
                 carparkMenu.className = 'menu_selected';
-                
+
                 // 주차장 마커들만 지도에 표시하도록 설정합니다
                 setCoffeeMarkers(null);
                 setStoreMarkers(null);
                 setCarparkMarkers(map);
             }
-        } 
-        
-        </script>
+        }
+
+
+
+    </script>
 </body>
 
 </html>
