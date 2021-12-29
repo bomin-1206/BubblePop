@@ -56,12 +56,14 @@ body {
     color: #7B7B7B;
     font-size: 14px;
     margin-top: 10px;
+    font-weight: bold;
 }
 
 .image_text_2 {
     color: #7B7B7B;
     font-size: 14px;
     margin-top: 22px;
+    font-weight: bold;
 }
 
 
@@ -126,7 +128,7 @@ body {
 
 .search_area>form>input {
     border: none;
-    width: 250px;
+    width: 480px;
     height: 40px;
     background: rgba(0, 0, 0, 0);
     color: #000;
@@ -391,7 +393,7 @@ input:focus {
 
 .scrollWrapBox {
     max-width: 98%;
-    min-height: 100px;
+    min-height: 140px;
     border: 1px solid black
 }
 
@@ -399,11 +401,11 @@ input:focus {
 
 .menu-btn button{
     background: #FFCFDB;
-    width: 115px;
-    height: 45px;
-    font-size: 14px;
+    width: 125px;
+    height: 50px;
+    font-size: 16px;
     text-align:center;
-    margin: 20px 20px 20px 20px;
+    margin: 20px 10px 20px 10px;
     border: none;
     border-radius: 60px;
     color:#fff;
