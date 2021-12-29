@@ -11,8 +11,16 @@
 </head>
 <body>
     <div class="user-profile">
-        <span style="position:fixed; top:63px; right:138px;">test 님</span>
-        <img class="profile" src="../photo/profile.png">
+        <div>test 님</div>
+        <div class="pro">
+            <img class="profile" src="../photo/profile.png" onclick="showBalloon()">
+            <div class="balloon hidden">
+                <img class="logout_img" src="../photo/logout.png">
+                <p class="logout-text">로그아웃</p>
+                <div class="balloons arrow-border"></div>
+                <div class="balloons arrow"></div>
+            </div>
+        </div>
     </div>
     <section class="home-form">
         <form action="/map.html" method="get">
@@ -41,5 +49,11 @@
             </div>
         </form>
     </section>
+    <script>
+        function showBalloon() {
+            const element = document.querySelector('.balloon');
+            element.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>

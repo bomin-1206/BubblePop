@@ -11,6 +11,48 @@
   position: absolute;
   top: 56px;
   right: 94px;
+  display: flex;
+  align-items: center;
+}
+
+.user-profile > * {
+  display: flex;
+}
+
+.balloon {
+  position: absolute;
+  top: 35px;
+  transform: translateX(-70px);
+  width: 125px;
+  height: 50px;
+  background: white;
+  border: none;
+  border-radius: 100px;
+  margin-top: 15px;
+}
+
+.balloons {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-style: solid;
+  left: 40px;
+  border-color: transparent;
+  border-width: 10px;
+}
+
+.arrow-border {
+  border-right-color: white;
+  bottom: 30px;
+  margin-left: 34px;
+  margin-bottom: 9px
+}
+
+.arrow {
+  border-left-color: white;
+  bottom: 30px;
+  margin-left: 54px;
+  margin-bottom: 9px;
 }
 
 body {
@@ -121,6 +163,27 @@ body {
 }
 
 .profile {
+  display: flex;
   width: 35px;
   height: 35px;
+  margin-left: 10px;
+}
+
+.pro {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.logout_img {
+  margin-left: 20px;
+  margin-top: 16px;
+  width: 21px;
+  height: 18px;
+}
+
+.logout-text {
+  font-size: 13px;
 }
