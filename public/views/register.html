@@ -8,10 +8,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Gothic&family=Roboto+Condensed:ital@1&display=swap" rel="stylesheet">
     <script src="jquery-3.4.1.js"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("pswd1");
+            var y = document.getElementById("hide1");
+            var z = document.getElementById("hide2");
+
+            if (x.type === 'password') {
+                x.type = "text";
+                y.style.display = "none";
+                z.style.display = "block";
+            }
+            else {
+                x.type = "password";
+                y.style.display = "block";
+                z.style.display = "none";
+            }
+        }
+        function myFunction2() {
+            var x = document.getElementById("pswd2");
+            var y = document.getElementById("hide1_2");
+            var z = document.getElementById("hide2_2");
+
+            if (x.type === 'password') {
+                x.type = "text";
+                y.style.display = "none";
+                z.style.display = "block";
+            }
+            else {
+                x.type = "password";
+                y.style.display = "block";
+                z.style.display = "none";
+            }
+        }
+        function register() {
+            var p1 = document.getElementById('pswd1').value;
+            var p2 = document.getElementById('pswd2').value;
+            if (p1 != p2) {
+                alert("비밀번호가 일치하지 않습니다.");
+            } else {
+                location.href = '/login.html';
+                document.insert.submit();
+            }
+        }
+    </script>
 </head>
 <body>
     <section class="register-form">
-        <form action="/register" method="??">
+        <form action="/register" method="post">
         <div class="register">
         <img class="logo" src="../photo/logo.png">
             <div class="register-int">
@@ -38,7 +82,7 @@
                 <label for="pswd2" class="pswd2-label">비밀번호 확인</label>
             </div>
             <div class="register-btn">
-                <button type='submit'>회원가입</button>
+                <button type='submit' onclick="register()">회원가입</button>
             </div>
             <div class="already">
             <a>이미 회원이신가요?&nbsp;&nbsp;&nbsp;</a>
@@ -46,40 +90,6 @@
         </div>
         </form>
         </div>
-            <script>
-                function myFunction() {
-                    var x = document.getElementById("pswd1");
-                    var y = document.getElementById("hide1");
-                    var z = document.getElementById("hide2");
-
-                    if(x.type === 'password') {
-                        x.type = "text";
-                        y.style.display = "none";
-                        z.style.display = "block";
-                    }
-                    else {
-                        x.type = "password";
-                        y.style.display = "block";
-                        z.style.display = "none";
-                    }
-                }
-                function myFunction2() {
-                    var x = document.getElementById("pswd2");
-                    var y = document.getElementById("hide1_2");
-                    var z = document.getElementById("hide2_2");
-
-                    if(x.type === 'password') {
-                        x.type = "text";
-                        y.style.display = "none";
-                        z.style.display = "block";
-                    }
-                    else {
-                        x.type = "password";
-                        y.style.display = "block";
-                        z.style.display = "none";
-                    }
-                }
-            </script>
     </section>
 </body>
 
