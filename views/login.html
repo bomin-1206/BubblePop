@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>너에게 가는 이 길 위에서</title>
+    <title>로그인</title>
     <link rel="stylesheet" href="../stylesheets/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +21,10 @@
             </div>
             <div class="int-area">
                 <input type="password" name="pw" id="pw" autocomplete="off" required>
-                <img class="open-eye" src="../views/eye.png"></img>
-                <img class="close-eye" src="../views/eye2.png"></img>
+                <span class="eye" onclick="myFunction()">
+                    <img id="hide1" class="open-eye" src="../views/eye.png"></img>
+                    <img id="hide2" class="close-eye" src="../views/eye2.png"></img>
+                </span>
                 <span></span>
                 <label for="pw" class="pw-label">비밀번호</label>
             </div>
@@ -35,22 +37,24 @@
         </div>
         </form>
         </div>
+            <script>
+                function myFunction() {
+                    var x = document.getElementById("pw");
+                    var y = document.getElementById("hide1");
+                    var z = document.getElementById("hide2");
+
+                    if(x.type === 'password') {
+                        x.type = "text";
+                        y.style.dispaly = "none";
+                        z.style.display = "block";
+                    }
+                    else {
+                        x.type = "password";
+                        y.style.dispaly = "block";
+                        z.style.display = "none";
+                    }
+                }
+            </script>
     </section>
-    </div>
-    <script>
-        function show() {
-            var password = document.getElementById('pw');
-            var icon = document.querySelector('.fas');
-            if(pw.type === "password") {
-                pw.type = "text";
-                pw.style.marginTop = "20px";
-                icon.style.color = "#7f2092";
-            }
-            else {
-                pw.type = "password";
-                icon.style.color = "grey";
-            }
-        }
-    </script>
 </body>
 </html>
