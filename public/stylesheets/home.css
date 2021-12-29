@@ -15,58 +15,67 @@ body {
   background-size: cover;
 }
 
-.parent{
-  width: 110%;
-  margin: auto;
-  margin-left: 20px;
-}
-
-.first {
-  margin-left: 600px;
-  border: none;
-  background: white;
-  float: left;
-  width: 330px;
-  height: 500px;
-  border-radius: 190px;
-  box-sizing: border-box;
-  background-color:rgba(255, 255, 255, 0.7);
-}
-
-.second{
-  border: none;
-  background: white;
-  float: left;
-  margin-left: 5%;
-  width: 330px;
-  height: 500px;
-  border-radius: 190px;
-  box-sizing: border-box;
-  background-color:rgba(255, 255, 255, 0.7);
-}
-
-.third{
-  border: none;
-  background: white;
-  float: right;
-  width: 330px;
-  height: 500px;
-  border-radius: 190px;
-  box-sizing: border-box;
-  background-color:rgba(255, 255, 255, 0.7);
+.group {
+  margin: 10px auto;
+  display: flex;
 }
 
 .cafe {
-  margin-top: 70px;
-  margin-left: 23%;
+  margin-left: 580px;
+  flex: 1;
+  display: flex;
+  background: white;
+  width: 375px;
+  height: 547px;
+  border-radius: 170px;
+  background-color:rgba(255, 255, 255, 0.8);
 }
 
 .restaurant {
-  margin-top: 110px;
-  margin-left: 0%;
+  margin-left: 60px;
+  flex: 1;
+  display: flex;
+  background: white;
+  width: 375px;
+  height: 547px;
+  border-radius: 170px;
+  background-color:rgba(255, 255, 255, 0.8);
 }
 
 .place {
-  margin-top: 71px;
-  margin-left: 18%;
+  margin-left: 60px;
+  flex: 1;
+  display: flex;
+  background: white;
+  width: 375px;
+  height: 547px;
+  border-radius: 170px;
+  background-color:rgba(255, 255, 255, 0.8);
+}
+
+.cafe_img {
+  width: 192px;
+  height: 230px;
+  display: block;
+  margin: 100px auto;
+}
+
+.restaurant_img {
+  width: 287px;
+  height: 184px;
+  display: block;
+  margin: 120px 0 0 30px;
+}
+
+.place_img {
+  width: 212px;
+  height: 217px;
+  display: block;
+  margin: 100px auto;
+}
+
+.home_text {
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
 }
