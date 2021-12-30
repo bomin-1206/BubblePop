@@ -441,7 +441,6 @@ input:focus {
 .scrollWrapBox {
     max-width: 98%;
     min-height: 140px;
-    border: 1px solid black;
 }
 
 .scrollWrapBox>title{
