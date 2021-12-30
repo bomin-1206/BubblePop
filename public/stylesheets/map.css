@@ -444,6 +444,12 @@ input:focus {
     border: 1px solid black;
 }
 
+.scrollWrapBox>title{
+    font-size:20px;
+    font-style:bold;
+    color:#000;
+}
+
 .item::selection {
     background-color: #FFA0B7;
 }
@@ -495,6 +501,7 @@ input:focus {
     font-size: 15px;
     color:#C6C6C6;
 }
+
 
 
 
