@@ -444,7 +444,13 @@ input:focus {
     border: 1px solid black;
 }
 
+.item::selection {
+    background-color: #FFA0B7;
+}
 
+.menu_btn:focus {
+    background-color: #FFA0B7;
+}
 
 .menu-btn button{
     background: #FFCFDB;
@@ -464,7 +470,6 @@ input:focus {
 .menu-btn button:hover{
     background-color: #FFA0B7;
 }
-
 
 .back-btn {
     margin: auto 10px;
